@@ -11,10 +11,10 @@ function SignUp() {
     }
 
     return (
-        <div className="signup">
-            <h1>Sign Up</h1>
+        <div className="auth-container">
+            <h1 className="auth-title">Sign Up</h1>
 
-            <form onSubmit={handleSubmit(submitHandler)}>
+            <form onSubmit={handleSubmit(submitHandler)} className="auth-form">
                 <div className="form-group mb-2">
                     <label htmlFor="email">Email</label>
                     <input type="email" className="form-control" {...register('email', { required: true })} />
@@ -39,7 +39,7 @@ function SignUp() {
                     {errors?.password_confirmation && <span className="error">Password Confirmation is required</span>}
                 </div>
 
-                <button type="submit" className="btn btn-primary">Sign Up</button>
+                <button type="submit" className="auth-btn">Sign Up</button>
             </form>
         </div>
     );

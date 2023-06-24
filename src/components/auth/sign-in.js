@@ -11,10 +11,10 @@ function SignIn() {
     }
 
     return (
-        <div className="signin">
-            <h1>Sign In</h1>
+        <div className="auth-container">
+            <h1 className="auth-title">Sign In</h1>
 
-            <form onSubmit={handleSubmit(submitHandler)}>
+            <form onSubmit={handleSubmit(submitHandler)} className="auth-form">
                 <div className="form-group mb-2">
                     <label htmlFor="email">Email</label>
                     <input type="email" className="form-control" {...register('email', { required: true })} />
@@ -27,7 +27,7 @@ function SignIn() {
                     {errors?.password && <span className="error">Password is required</span>}
                 </div>
 
-                <button type="submit" className="btn btn-primary">Sign In</button>
+                <button type="submit" className="auth-btn">Sign In</button>
             </form>
         </div>
     );
