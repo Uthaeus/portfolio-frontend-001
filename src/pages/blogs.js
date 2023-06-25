@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 
 import { UserContext } from "../store/user-context";
 import BlogItem from "../components/blogs/blog-item";
+import BlogSidebar from "../components/blogs/blog-sidebar";
 
 function Blogs() {
     const [blogs, setBlogs] = useState([]);
@@ -21,18 +22,19 @@ function Blogs() {
         <div className="blogs-container">
             <div className="blogs-header">
                 <h2>Blogs</h2>
+
+                <p>featured section</p>
             </div>
 
-            <div className="blogs-body">
-                {user && <Link to="/blogs/new" className="new-blog-link">New Blog</Link>}
+            {user && <Link to="/blogs/new" className="new-blog-link">New Blog</Link>}
 
-                <div className="blogs-list">
+            <div className="blogs-body">
+
+                <div className="blogs-list-wrapper">
                     {blogs.map((blog) => <BlogItem key={blog.id} blog={blog} />)}
                 </div>
 
-                <div className="blogs-sidebar">
-                    sidebar here 
-                </div>
+                <BlogSidebar />
             </div>
         </div>
     );

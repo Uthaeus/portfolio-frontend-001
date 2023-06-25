@@ -1,0 +1,53 @@
+
+.blogs-container {
+    width: 100%;
+
+    .blogs-header {
+        width: 92%;
+        height: 160px;
+        margin: 2rem auto;
+        border-radius: 8px;
+        background-color: $blog-dark-green;
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+    }
+
+    .blogs-body {
+        width: 100%;
+        display: grid;
+        grid-template-columns: 4fr 1fr;
+
+        .blogs-list-wrapper {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 0 2rem;
+        }
+    }
+}
+
+// Blog Sidebar 
+
+.blog-sidebar {
+    width: 90%;
+    margin: 1rem auto;
+    border-radius: 8px;
+    background-color: $blog-light-blue;
+
+    .blog-sidebar-title {
+        font-size: 2.2em;
+        font-weight: 600;
+        color: $blog-dark-blue;
+        padding: 1rem;
+    }
+
+    .blog-sidebar-categories {
+        padding-left: 1rem;
+    }
+
+    .blog-sidebar-socials {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

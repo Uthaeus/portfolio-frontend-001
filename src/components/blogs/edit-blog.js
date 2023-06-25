@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 
 import BlogForm from "./blog-form";
 
@@ -17,8 +17,9 @@ function EditBlog() {
     }, [id]);
 
     return (
-        <div>
-            <h1>Edit Blog</h1>
+        <div className="blogs-container">
+            <h1 className="blogs-title">Edit Blog</h1>
+            <Link to="/blogs" className="blogs-link">Back to Blogs</Link>
             <hr />
 
             <BlogForm blog={blog} />
