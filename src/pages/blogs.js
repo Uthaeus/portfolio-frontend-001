@@ -18,6 +18,12 @@ function Blogs() {
             .catch(error => console.log('blogs error', error));
     }, []);
 
+    const removeBlogHandler = (id) => {
+        let updatedBlogs = blogs.filter((blog) => blog.id !== id);
+
+        setBlogs(updatedBlogs);
+    };
+
     return (
         <div className="blogs-container">
             <div className="blogs-header">
@@ -31,7 +37,7 @@ function Blogs() {
             <div className="blogs-body">
 
                 <div className="blogs-list-wrapper">
-                    {blogs.map((blog) => <BlogItem key={blog.id} blog={blog} />)}
+                    {blogs.map((blog) => <BlogItem key={blog.id} blog={blog} user={user} removeBlogHandler={removeBlogHandler} />)}
                 </div>
 
                 <BlogSidebar />
