@@ -9,33 +9,33 @@
     .homepage__head {
         width: 45%;
         padding: 2rem;
-        border-bottom: 1px solid $dark-blue;
+        border-bottom: 1px solid $dark-grey;
         position: relative;
 
         .homepage-username {
             font-size: 1.3em;
             font-weight: 700;
-            color: $blue;
+            color: $orange;
         }
 
         .homepage-title {
             font-size: 2.5em;
             font-weight: 400;
-            color: $white;
+            color: $blue;
             text-align: center;
         }
 
         .homepage-quote {
             font-size: 1.2em;
             font-weight: 400;
-            color: $light-blue;
+            color: $tan;
             padding: 0.5rem 
         }
 
         .homepage-author {
             font-size: 1em;
             font-weight: 600;
-            color: $blue;
+            color: $light-grey;
             text-align: right;
             margin-bottom: 1rem;
         }
@@ -59,17 +59,17 @@
             }
 
             .about {
-                background-color: $red3;
+                background-color: $red;
                 color: $white;
             }
 
             .contact {
-                background-color: $blue;
+                background-color: $green;
                 color: $white;
             }
 
             .projects {
-                background-color: $dark-grey;
+                background-color: $blue;
                 color: $white;
             }
         }
@@ -83,22 +83,25 @@
             display: flex;
             flex-direction: column;
             align-items: flex-end;
-            background-color: $light-grey;
-            border-radius: 8px;
+            background-color: $brown;
+            border-radius: 4px;
             opacity: 0;
             transition: all 0.5s ease-in-out;
 
             .homepage-project-item {
                 width: 90%;
                 padding: 0 1rem;
+                padding-top: 3px;
                 margin: 0.15rem 0;
                 height: 30px;
                 border: 1px solid $black;
+                border-radius: 2px;
                 background-color: $white;
                 color: $black;
 
                 .project-item-name {
                     font-size: 0.9em;
+                    font-weight: 500;
                 }
             }
         }
