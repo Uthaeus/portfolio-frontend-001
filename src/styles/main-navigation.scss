@@ -5,4 +5,56 @@
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+
+    .main-navigation-head {
+        width: 100%;
+        height: 15vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-bottom: 1px solid $light-grey;
+
+        .head-welcome {
+            font-size: 2rem;
+            font-weight: 700;
+            color: $red1;
+        }
+    }
+
+    .main-navigation-links {
+        width: 90%;
+        margin: 1rem auto;
+        padding: 1rem 0;
+        display: flex;
+        flex-direction: column;
+        border-bottom: 1px solid $light-grey;
+    }
+
+    .main-navigation-auth {
+        width: 90%;
+        margin: 0 auto;
+        padding: 1rem 0;
+        display: flex;
+        flex-direction: column;
+        border-bottom: 1px solid $light-grey;
+    }
+
+    .nav-link {
+        font-size: 1.4em;
+        color: $blue;
+        text-decoration: none;
+        padding: 0.5rem 0;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+            color: $light-blue;
+            transform: scale(1.1);
+        }
+    }
+
+    .link-active {
+        color: $light-blue;
+        transform: scale(1.1);
+        border-bottom: 1px solid $light-blue;
+    }
 }

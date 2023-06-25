@@ -1,13 +1,33 @@
 import { NavLink } from "react-router-dom";
+import { useContext } from "react";
+
+import { UserContext } from "../../store/user-context";
 
 function MainNavigation() {
+    const { user, logoutUser } = useContext(UserContext);
 
-    function logoutHandler() {}
+    function logoutHandler() {
+
+        fetch('http://localhost:4000/users/sign_out', {
+            method: 'DELETE',
+            headers: {
+                'Authorization': `Bearer ${localStorage.getItem('token-001')}`
+            }
+        })
+        .then(response => {
+            if (response.ok) {
+                localStorage.removeItem('token-001');
+                logoutUser();
+                return response.json();
+            }
+        })
+        .catch(error => console.log('sign out error', error));
+    }
 
     return (
         <div className="main-navigation">
             <div className="main-navigation-head">
-                head
+                <p className="head-welcome">{user ? user.username : 'Hello'}</p>
             </div>
 
             <div className="main-navigation-links">
