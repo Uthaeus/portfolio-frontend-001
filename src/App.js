@@ -1,4 +1,7 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { useEffect, useContext } from "react";
+
+import { UserContext } from "./store/user-context";
 import RootLayout from "./components/layouts/root-layout";
 import ErrorPage from "./components/error/errorpage";
 import Homepage from "./pages/homepage";
@@ -38,6 +41,30 @@ const router = createBrowserRouter([
 ]);
 
 function App() {
+  const { loginUser, user } = useContext(UserContext);
+
+  useEffect(() => {
+    let token = localStorage.getItem("token-001");
+
+    if (token && !user) {
+      fetch('http://localhost:4000/check_user', {
+        method: 'GET',
+        headers: {
+          'Authorization': `Bearer ${token}`
+        }
+      })
+      .then(response => {
+        if (response.ok) {
+          return response.json();
+        }
+      })
+      .then(data => {
+        loginUser(data);
+      })
+      .catch(error => console.log('check user error', error));
+    }
+  }, []);
+
   return <RouterProvider router={router} />;
 }
 
