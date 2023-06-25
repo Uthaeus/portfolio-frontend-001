@@ -1,0 +1,75 @@
+
+.homepage {
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .homepage__head {
+        width: 45%;
+        padding: 2rem;
+        border-bottom: 1px solid $dark-blue;
+
+        .homepage-username {
+            font-size: 1.3em;
+            font-weight: 700;
+            color: $blue;
+        }
+
+        .homepage-title {
+            font-size: 2.5em;
+            font-weight: 400;
+            color: $white;
+            text-align: center;
+        }
+
+        .homepage-quote {
+            font-size: 1.2em;
+            font-weight: 400;
+            color: $light-blue;
+            padding: 0.5rem 
+        }
+
+        .homepage-author {
+            font-size: 1em;
+            font-weight: 600;
+            color: $blue;
+            text-align: right;
+            margin-bottom: 1rem;
+        }
+
+        .homepage-links {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            grid-gap: 0.25rem;
+
+            .homepage-link {
+                width: 100%;
+                font-size: 0.9em;
+                border-radius: 2px;
+                transition: all 0.3s ease-in-out;
+
+                &:hover {
+                    transform: scale(1.04);
+                }
+            }
+
+            .about {
+                background-color: $red3;
+                color: $white;
+            }
+
+            .contact {
+                background-color: $blue;
+                color: $white;
+            }
+
+            .projects {
+                background-color: $dark-grey;
+                color: $white;
+            }
+        }
+    }
+}

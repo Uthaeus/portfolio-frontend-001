@@ -1,10 +1,12 @@
 @import 'main-navigation';
 
+@import 'homepage';
+
 .root-layout {
     width: 100%;
     min-height: 100vh;
     display: grid;
     grid-template-columns: 1fr 6fr;
     background-color: $black;
-    color: $white;
+    color: $light-grey;
 }

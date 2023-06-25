@@ -36,11 +36,18 @@ function MainNavigation() {
                 <NavLink to="/contact" className={({isActive}) => isActive ? 'nav-link link-active' : 'nav-link'}>Contact</NavLink>
             </div>
 
-            <div className="main-navigatioin-auth">
-                <NavLink to='/sign-in' className={({isActive}) => isActive ? 'nav-link link-active' : 'nav-link'}>Sign In</NavLink>
-                <NavLink to='/sign-up' className={({isActive}) => isActive ? 'nav-link link-active' : 'nav-link'}>Sign Up</NavLink>
+            <div className="main-navigation-auth">
+                {user ? (
+                    <NavLink onClick={logoutHandler} className='nav-link'>Sign Out</NavLink>
+                ) : (
+                    <>
+                        <NavLink to='/sign-in' className={({isActive}) => isActive ? 'nav-link link-active' : 'nav-link'}>Sign In</NavLink>
+                        <NavLink to='/sign-up' className={({isActive}) => isActive ? 'nav-link link-active' : 'nav-link'}>Sign Up</NavLink>
+                    </>
+                )}
+                
 
-                <NavLink onClick={logoutHandler} className='nav-link'>Sign Out</NavLink>
+                
             </div>
         </div>
     );

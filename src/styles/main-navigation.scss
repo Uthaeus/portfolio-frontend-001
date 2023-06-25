@@ -4,7 +4,6 @@
     height: 100vh;
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
 
     .main-navigation-head {
         width: 100%;
@@ -12,12 +11,12 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        border-bottom: 1px solid $light-grey;
+        border-bottom: 1px solid $dark-blue;
 
         .head-welcome {
             font-size: 2rem;
             font-weight: 700;
-            color: $red1;
+            color: $red3;
         }
     }
 
@@ -27,7 +26,8 @@
         padding: 1rem 0;
         display: flex;
         flex-direction: column;
-        border-bottom: 1px solid $light-grey;
+        align-items: flex-end;
+        border-bottom: 1px solid $dark-grey;
     }
 
     .main-navigation-auth {
@@ -36,7 +36,7 @@
         padding: 1rem 0;
         display: flex;
         flex-direction: column;
-        border-bottom: 1px solid $light-grey;
+        align-items: flex-end;
     }
 
     .nav-link {
