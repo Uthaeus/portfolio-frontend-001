@@ -10,6 +10,7 @@
         width: 45%;
         padding: 2rem;
         border-bottom: 1px solid $dark-blue;
+        position: relative;
 
         .homepage-username {
             font-size: 1.3em;
@@ -44,6 +45,7 @@
             display: grid;
             grid-template-columns: 1fr 1fr 1fr;
             grid-gap: 0.25rem;
+            z-index: 100;
 
             .homepage-link {
                 width: 100%;
@@ -71,5 +73,40 @@
                 color: $white;
             }
         }
+
+        .homepage-projects-wrapper {
+            width: 80%;
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            background-color: $light-grey;
+            border-radius: 8px;
+            opacity: 0;
+            transition: all 0.5s ease-in-out;
+
+            .homepage-project-item {
+                width: 90%;
+                padding: 0 1rem;
+                margin: 0.15rem 0;
+                height: 30px;
+                border: 1px solid $black;
+                background-color: $white;
+                color: $black;
+
+                .project-item-name {
+                    font-size: 0.9em;
+                }
+            }
+        }
+
+        .show-projects {
+            top: 300px;
+            opacity: 1;
+        }
     }
 }
+
