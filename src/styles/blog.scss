@@ -51,3 +51,31 @@
         grid-template-columns: repeat(2, 1fr);
     }
 }
+
+// Blog Item
+
+.blog-item {
+    width: 80%;
+    padding: 1rem;
+    margin: 1rem 0;
+    border-bottom: 1px solid $blog-dark-blue;
+
+    .blog-item-title {
+        font-size: 1.8em;
+        font-weight: 600;
+        color: $blog-dark-blue;
+        text-decoration: none;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+            color: $blog-green;
+            transform: scale(1.1);
+        }
+    }
+
+    .blog-item-text {
+        font-size: 1.2em;
+        font-weight: 400;
+        color: $blog-blue;
+    }
+}

@@ -1,16 +1,15 @@
-
+import { Link } from "react-router-dom";
 
 function BlogItem({ blog }) {
 
+    function truncate(str) {
+        return str.length > 100 ? str.substring(0, 100) + "..." : str;
+    }
+
     return (
         <div className="blog-item">
-            <div className="blog-item-img">
-                <img src={`http://localhost:4000${blog.image?.url}`} alt={blog.title} />
-            </div>
-            <div className="blog-item-body">
-                <h3 className="blog-item-title">{blog.title}</h3>
-                <p className="blog-item-text">{blog.body}</p>
-            </div>
+            <Link to={`/blogs/${blog.id}`} className="blog-item-title">{blog.title}</Link>
+            <p className="blog-item-text">{truncate(blog.body)}</p>
         </div>
     );
 }
