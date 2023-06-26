@@ -246,3 +246,19 @@
         margin-left: 0.5rem;
     }
 }
+
+// Blog Category Form
+
+.blog-category-form {
+    width: 90%;
+    margin: 0 auto;
+    padding: 1rem;
+
+    .category-form-btn {
+        font-size: 0.8em;
+        padding: 0 1rem;
+        background-color: $blog-dark-blue;
+        color: $white;
+        border-radius: 3px;
+    }
+}

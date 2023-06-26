@@ -15,7 +15,7 @@ function BlogCategoryForm() {
                 {errors?.name && <span className="text-danger">This field is required</span>}
             </div>
 
-            <button type="submit" className="btn btn-primary">Submit</button>
+            <button type="submit" className="category-form-btn">Submit</button>
         </form>
     );
 }
