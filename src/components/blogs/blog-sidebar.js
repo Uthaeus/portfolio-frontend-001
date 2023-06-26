@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 
 import BlogCategoryForm from "./blog-category-form";
 
-function BlogSidebar({ user }) {
+function BlogSidebar({ user, categoryFilterHandler }) {
     const [categories, setCategories] = useState([]);
     const [showCategoryForm, setShowCategoryForm] = useState(false);
 
@@ -13,18 +13,26 @@ function BlogSidebar({ user }) {
             .catch(error => console.log('categories error', error));
     }, []);
 
+    function addCategoryHandler(category) {
+        setCategories([...categories, category]);
+    }
+
     return (
         <div className="blog-sidebar">
             {user?.role === 'site_admin' && <p onClick={() => setShowCategoryForm(!showCategoryForm)} className="new-category-link">{showCategoryForm ? 'close' : 'create category'}</p>}
 
-            {showCategoryForm && <BlogCategoryForm />}
+            {showCategoryForm && <BlogCategoryForm addCategoryHandler={addCategoryHandler} />}
 
             <h2 className="blog-sidebar-title">categories</h2>
 
             <ul className="blog-sidebar-categories">
+                <li className="category-wrapper">
+                    <p onClick={() => categoryFilterHandler("all")} className="category-name">all</p>
+                </li>
+
                 {categories.map((category) => (
                     <li className="category-wrapper" key={category.id}>
-                        <p className="category-name">{category.name}</p>
+                        <p onClick={() => categoryFilterHandler(category.id)} className="category-name">{category.name}</p>
                         {user?.role === 'site_admin' && <p className="category-delete"><i className="bi bi-trash"></i></p>}
                     </li>
                 ))}

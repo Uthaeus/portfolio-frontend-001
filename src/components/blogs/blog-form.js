@@ -7,6 +7,7 @@ function BlogForm({ blog }) {
     const navigate = useNavigate();
     const [method, setMethod] = useState("POST");
     const [url, setUrl] = useState("http://localhost:4000/blogs");
+    const [categories, setCategories] = useState([]);
 
     useEffect(() => {
         if (blog) {
@@ -16,10 +17,18 @@ function BlogForm({ blog }) {
         }
     }, [blog, reset]);
 
+    useEffect(() => {
+        fetch("http://localhost:4000/categories")
+            .then((res) => res.json())
+            .then((data) => setCategories(data))
+            .catch((error) => console.log("categories error", error));
+    }, []);
+
     function buildForm(data) {
         const formData = new FormData();
 
         formData.append("blog[title]", data.title);
+        formData.append("blog[category_id]", data.category_id);
         formData.append("blog[body]", data.body);
         formData.append("blog[image]", data.image[0]);
 
@@ -54,13 +63,23 @@ function BlogForm({ blog }) {
             </div>
 
             <div className="form-group mb-2">
+                <label htmlFor="category">Category</label>
+                <select className="form-control" {...register("category_id", {required: true})}>
+                    <option value="">Select a category</option>
+                    {categories.map((category) => (
+                        <option key={category.id} value={category.id}>{category.name}</option>
+                    ))}
+                </select>
+            </div>
+
+            <div className="form-group mb-2">
                 <label htmlFor="image">Image</label>
                 <input type='file' className="form-control" {...register("image", {required: true})} />
             </div>
 
             <div className="form-group mb-3">
                 <label htmlFor="body">Body</label>
-                <textarea className="form-control" {...register("body", {required: true})} />
+                <textarea className="form-control" rows={5} {...register("body", {required: true})} />
                 {errors?.body && <span className="text-danger">This field is required</span>}
             </div>
 
