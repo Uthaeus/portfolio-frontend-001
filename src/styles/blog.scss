@@ -77,6 +77,11 @@
     background-color: $blog-light-blue;
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
 
+    .new-category-link {
+        font-size: 0.7em;
+        color: $red;
+    }
+
     .blog-sidebar-title {
         font-size: 2.2em;
         font-weight: 600;
@@ -86,11 +91,44 @@
 
     .blog-sidebar-categories {
         padding-left: 1rem;
+
+        .category-wrapper {
+            display: flex;
+            justify-content: space-between;
+
+            .category-name {
+                font-size: 1.4em;
+                font-weight: 600;
+                color: $blog-green;
+            }
+
+            .category-delete {
+                font-size: 1.4em;
+                color: $red;
+                transition: all 0.3s ease-in-out;
+
+                &:hover {
+                    transform: scale(1.2);
+                    color: $red4;
+                }
+            }
+        }
     }
 
     .blog-sidebar-socials {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+
+        .blog-sidebar-socials-link {
+            font-size: 1.7em;
+            color: $blog-dark-green;
+            transition: all 0.3s ease-in-out;
+
+            &:hover {
+                transform: scale(1.2);
+                color: $blog-green;
+            }
+        }
     }
 }
 

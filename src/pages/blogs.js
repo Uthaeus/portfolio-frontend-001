@@ -50,7 +50,7 @@ function Blogs() {
                     {blogs.map((blog) => <BlogItem key={blog.id} blog={blog} user={user} removeBlogHandler={removeBlogHandler} />)}
                 </div>
 
-                <BlogSidebar />
+                <BlogSidebar user={user} />
             </div>
         </div>
     );
