@@ -27,16 +27,22 @@ function BlogItem({ blog, user, removeBlogHandler }) {
 
             <div className="blog-item-widgets">
                 <div className="widgets-left">
-                    <Link to={`/blogs/${blog.id}`} className="widget-item">icon</Link> /
+                    <Link to={`/blogs/${blog.id}`} className="widget-item open-widget">
+                        <i className="bi bi-file-earmark-text-fill"></i>    
+                    </Link> /
                     <span className="widget-item">{blog.id}</span> /
-                    <span className="widget-item">created {blog.created_at}</span> /
+                    <p className="widget-item">created <span className="date-widget">{blog.created_at.split('T')[0]}</span></p> 
                 </div>
 
                 <div className="widgets-right">
                     {user?.role === 'site_admin' && (
                         <>
-                            <Link to={`/blogs/${blog.id}/edit`} className="widget-item">edit</Link> /
-                            <Link onClick={deleteHandler} className="widget-item">delete</Link>
+                            <Link to={`/blogs/${blog.id}/edit`} className="widget-item edit-widget">
+                                <i className="bi bi-pencil-square"></i>    
+                            </Link> /
+                            <Link onClick={deleteHandler} className="widget-item delete-widget">
+                                <i className="bi bi-trash-fill"></i>
+                            </Link>
                         </>
                     )}
                 </div>

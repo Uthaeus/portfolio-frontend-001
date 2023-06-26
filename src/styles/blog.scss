@@ -23,7 +23,7 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
-            align-items: center;
+            margin-left: 25%;
 
             .blogs-header-title {
                 font-size: 2.4em;
@@ -35,8 +35,7 @@
                 font-size: 1.4em;
                 font-weight: 400;
                 padding: 0.5rem 0;
-                color: $blog-dark-green;
-                border-bottom: 1px solid $blog-dark-green;
+                color: $light-grey;
             }
         }
 
@@ -50,7 +49,7 @@
             .featured-title {
                 font-size: 1.4em;
                 font-weight: 600;
-                color: $orange;
+                color: $grey;
             }
         }
     }
@@ -76,6 +75,7 @@
     margin: 1rem auto;
     border-radius: 8px;
     background-color: $blog-light-blue;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
 
     .blog-sidebar-title {
         font-size: 2.2em;
@@ -109,7 +109,7 @@
 
     .blog-item-widgets {
         width: 84%;
-        height: 24px;
+        height: 32px;
         margin-left: 1rem;
         margin-bottom: 1rem;
         border-radius: 4px;
@@ -118,18 +118,58 @@
         background-color: $light-grey;
         border: 1px solid $grey;
 
-        .widgets-left {
-            display: flex;
-        }
-
-        .widgets-right {
-            display: flex;
-        }
-
         .widget-item {
             font-size: 0.9em;
             padding: 0 0.5rem;
         }
+
+        .widgets-left {
+            display: flex;
+
+            .open-widget {
+                color: $blog-blue;
+                font-size: 1.2em;
+                transition: all 0.3s ease-in-out;
+
+                &:hover {
+                    transform: scale(1.2);
+                    color: $blog-dark-blue;
+                }
+            }
+
+            .date-widget {
+                padding-left: 0.25rem;
+                color: $orange;
+            }
+        }
+
+        .widgets-right {
+            display: flex;
+
+            .edit-widget {
+                color: $blog-green;
+                font-size: 1.2em;
+                transition: all 0.3s ease-in-out;
+
+                &:hover {
+                    transform: scale(1.2);
+                    color: $blog-dark-green;
+                }
+            }
+
+            .delete-widget {
+                color: $red;
+                font-size: 1.2em;
+                transition: all 0.3s ease-in-out;
+
+                &:hover {
+                    transform: scale(1.2);
+                    color: $red5;
+                }
+            }
+        }
+
+        
     }
 
     .blog-item-text {
