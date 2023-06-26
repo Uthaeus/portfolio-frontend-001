@@ -39,6 +39,11 @@ function BlogDetail() {
         setComments([comment, ...comments]);
     }
 
+    function commentRemoveHandler(id) {
+        let updatedComments = comments.filter((comment) => comment.id !== id);
+        setComments(updatedComments);
+    }
+
     if (!blog) return <p>Loading...</p>;
 
     return (
@@ -64,8 +69,12 @@ function BlogDetail() {
 
                             {user?.role === "site_admin" && (
                                 <>
-                                    <Link to={`/blogs/${id}/edit`} className="blog-detail-edit">edit</Link>
-                                    <Link onClick={deleteHandler} className="blog-detail-delete">delete</Link>
+                                    <Link to={`/blogs/${id}/edit`} className="blog-detail-edit">
+                                        <i className="bi bi-pen"></i>
+                                    </Link>
+                                    <Link onClick={deleteHandler} className="blog-detail-delete">
+                                        <i className="bi bi-trash"></i>
+                                    </Link>
                                 </>
                             )}
                         </div>
@@ -83,7 +92,7 @@ function BlogDetail() {
                     
                     <p className="comments-title">comments:</p>
 
-                    {comments.map((comment) => <BlogCommentItem key={comment.id} comment={comment} />)}
+                    {comments?.map((comment) => <BlogCommentItem key={comment.id} comment={comment} user={user} commentRemoveHandler={commentRemoveHandler} />)}
                 </div>
             </div>
         </div>

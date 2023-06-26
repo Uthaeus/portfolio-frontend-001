@@ -10,7 +10,7 @@ function BlogCommentForm({ user, blogId, addCommentHandler }) {
                 content: data.content,
                 author: name,
                 blog_id: blogId,
-                user_id: user ? user.id : null
+                user_id: user ? user.id : 1
             }
         };
 
@@ -36,8 +36,7 @@ function BlogCommentForm({ user, blogId, addCommentHandler }) {
     return (
         <form onSubmit={handleSubmit(submitHandler)} className="blog-comment-form">
             <div className="form-group mb-1">
-                <label htmlFor="content">Comment</label>
-                <textarea className="form-control" rows={3} {...register("content", { required: true })} />
+                <textarea className="form-control" rows={3} placeholder="share your thoughts..." {...register("content", { required: true })} />
                 {errors?.content && <span className="error">This field is required</span>}
             </div>
 
