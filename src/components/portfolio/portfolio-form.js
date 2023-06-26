@@ -27,8 +27,38 @@ function PortfolioForm({ portfolio }) {
         setCurrentTech(e.target.value);
     }
 
+    function buildForm(data) {
+        const formData = new FormData();
+
+        formData.append('portfolio_item[title]', data.title);
+        formData.append('portfolio_item[description]', data.description);
+        formData.append('portfolio_item[url]', data.url);
+        formData.append('portfolio_item[technologies]', technologies);
+        formData.append('portfolio_item[image]', data.image[0]);
+
+        return formData;
+    }
+
     function submitHandler(data) {
         console.log(data);
+
+        fetch('http://localhost:4000/portfolio_items', {
+            method: 'POST',
+            headers: {
+                'Authorization': `Bearer ${localStorage.getItem('token-001')}`
+            },
+            body: buildForm(data)
+        })
+        .then(response => {
+            if (response.ok) {
+                return response.json();
+            }
+        })
+        .then(data => {
+            console.log(data);
+            navigate('/portfolio');
+        })
+        .catch(error => console.log('create portfolio error', error));
     }
 
     return (

@@ -1,0 +1,49 @@
+
+.portfolio-container {
+    width: 100%;
+    min-height: 100vh;
+
+    .portfolio-header {
+        width: 100%;
+        min-height: 175px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        .portfolio-title {
+            font-size: 2.5rem;
+            font-weight: 400;
+            color: $dark-blue;
+        }
+
+        .portfolio-subtitle {
+            width: 40%;
+            font-size: 1.3rem;
+            font-weight: 400;
+            color: $dark-grey;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid $dark-grey;
+        }
+
+        .new-portfolio-link {
+            font-size: 1.2rem;
+            font-weight: 400;
+            color: $dark-blue;
+            transition: all 0.3s ease-in-out;
+
+            &:hover {
+                filter: brightness(1.2);
+                transform: scale(1.04);
+            }
+        }
+    }
+
+    .portfolio-items {
+        width: 80%;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 1rem;
+    }
+}

@@ -34,7 +34,7 @@ function PortfolioNavigation() {
             </div>
 
             <div className="portfolio-navigation-foot">
-                <p className="nav-title">portfolio</p>
+                <Link className="nav-title">portfolio</Link>
                 <Link className="nav-toggle">v</Link>
             </div>
         </div>
