@@ -2,10 +2,13 @@ import { useState, useEffect, useContext } from "react";
 import { useParams, Link, useNavigate } from "react-router-dom";
 
 import { UserContext } from "../../store/user-context";
+import BlogCommentForm from "./blog-comment-form";
+import BlogCommentItem from "./blog-comment-item";
 
 function BlogDetail() {
     const { id } = useParams();
     const [blog, setBlog] = useState(null);
+    const [comments, setComments] = useState([]);
     const { user } = useContext(UserContext);
     const navigate = useNavigate();
 
@@ -14,6 +17,7 @@ function BlogDetail() {
             .then((res) => res.json())
             .then((data) => {
                 setBlog(data);
+                setComments(data.blog_comments);
             });
     }, [id]);
 
@@ -29,6 +33,10 @@ function BlogDetail() {
                 }
             })
             .catch((error) => console.log("delete blog error", error));
+    }
+
+    function addCommentHandler(comment) {
+        setComments([comment, ...comments]);
     }
 
     if (!blog) return <p>Loading...</p>;
@@ -71,7 +79,11 @@ function BlogDetail() {
 
             <div className="blog-detail-right">
                 <div className="comments-wrapper">
-                    comments
+                    <BlogCommentForm user={user} blogId={id} addCommentHandler={addCommentHandler} />
+                    
+                    <p className="comments-title">comments:</p>
+
+                    {comments.map((comment) => <BlogCommentItem key={comment.id} comment={comment} />)}
                 </div>
             </div>
         </div>
