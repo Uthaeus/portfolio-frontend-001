@@ -43,12 +43,12 @@ function Blogs() {
         <div className="blogs-container">
             <div className="blogs-header">
                 <div className="blogs-header-main">
-                    <h2 className="blogs-header-title">Blogs</h2>
-                    <p className="blogs-header-subtitle">blogs description</p>
+                    <h2 className="blogs-header-title">My Blogs</h2>
+                    <p className="blogs-header-subtitle">Learn from my mistakes</p>
                 </div>
 
                 <div className="blogs-header-featured">
-                    <p className="featured-title">featured blog</p>
+                    <p className="featured-title">featured blog:</p>
                     {featuredBlog && <BlogFeaturedItem blog={featuredBlog} />}
                 </div>
             </div>
@@ -58,7 +58,7 @@ function Blogs() {
             <div className="blogs-body">
 
                 <div className="blogs-list-wrapper">
-                    {displayedBlogs.map((blog) => <BlogItem key={blog.id} blog={blog} user={user} removeBlogHandler={removeBlogHandler} />)}
+                    {displayedBlogs.map((blog) => <BlogItem key={blog.id} blog={blog} user={user} removeBlogHandler={removeBlogHandler} categoryFilterHandler={categoryFilterHandler} />)}
                 </div>
 
                 <BlogSidebar user={user} categoryFilterHandler={categoryFilterHandler} />

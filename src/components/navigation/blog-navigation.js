@@ -4,7 +4,24 @@ import { useContext } from "react";
 import { UserContext } from "../../store/user-context";
 
 function BlogNavigation() {
-    const { user } = useContext(UserContext);
+    const { user, logoutUser } = useContext(UserContext);
+
+    function logoutHandler() {
+        fetch("http://localhost:4000/users/sign_out", {
+            method: "DELETE",
+            headers: {
+                'Authorization': `Bearer ${localStorage.getItem('token-001')}`
+            }
+        })
+        .then(response => {
+            if (response.ok) {
+                logoutUser();
+                localStorage.removeItem('token-001');
+                return response.json();
+            }
+        })
+        .catch(error => console.log('logout error', error));
+    }
 
     return (
         <div className="blog-navigation">
@@ -20,7 +37,7 @@ function BlogNavigation() {
             </div>
 
             <div className="blog-navigation__auth">
-                {user ? <NavLink to="/sign-out" className="blog-nav-link">Sign Out</NavLink> : (
+                {user ? <NavLink onClick={logoutHandler} className="blog-nav-link">Sign Out</NavLink> : (
                     <>
                         <NavLink to="/sign-in" className="blog-nav-link">Sign In</NavLink>
                         <NavLink to="/sign-up" className="blog-nav-link">Sign Up</NavLink>

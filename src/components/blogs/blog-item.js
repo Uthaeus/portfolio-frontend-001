@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 
-function BlogItem({ blog, user, removeBlogHandler }) {
+function BlogItem({ blog, user, removeBlogHandler, categoryFilterHandler }) {
 
     function truncate(str) {
         return str.length > 100 ? str.substring(0, 100) + "..." : str;
@@ -21,6 +21,8 @@ function BlogItem({ blog, user, removeBlogHandler }) {
             .catch((error) => console.log("delete blog error", error));
     }
 
+    console.log('blog', blog);
+
     return (
         <div className="blog-item">
             <p className="blog-item-title">{blog.title}</p>
@@ -30,11 +32,14 @@ function BlogItem({ blog, user, removeBlogHandler }) {
                     <Link to={`/blogs/${blog.id}`} className="widget-item open-widget">
                         <i className="bi bi-file-earmark-text-fill"></i>    
                     </Link> /
+                    <Link to='/blogs' className="widget-item back-widget">blogs</Link> /
                     <span className="widget-item">{blog.id}</span> /
-                    <p className="widget-item">created <span className="date-widget">{blog.created_at.split('T')[0]}</span></p> 
+                    <Link onClick={() => categoryFilterHandler(blog.category.id)} className="widget-item category-name">{blog.category?.name}</Link> 
+                     
                 </div>
 
                 <div className="widgets-right">
+                    <p className="widget-item">created <span className="date-widget">{blog.created_at.split('T')[0]}</span></p>
                     {user?.role === 'site_admin' && (
                         <>
                             <Link to={`/blogs/${blog.id}/edit`} className="widget-item edit-widget">

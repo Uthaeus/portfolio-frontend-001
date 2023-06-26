@@ -92,7 +92,7 @@
     .blog-sidebar-title {
         font-size: 1.4em;
         font-weight: 600;
-        color: $blog-dark-blue;
+        color: $blog-green;
         padding: 1rem;
     }
 
@@ -102,11 +102,12 @@
         .category-wrapper {
             display: flex;
             justify-content: space-between;
+            padding-left: 1rem;
 
             .category-name {
-                font-size: 1.7em;
+                font-size: 1.8em;
                 font-weight: 600;
-                color: $blog-green;
+                color: $blog-dark-blue;
                 transition: all 0.3s ease-in-out;
 
                 &:hover {
@@ -135,15 +136,20 @@
         margin: 0 auto;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+        grid-gap: 0.5rem 1rem;
+        margin-bottom: 1rem;
+        border-bottom: 1px solid $blog-dark-blue;
+        padding-bottom: 1rem;
 
         .blog-sidebar-socials-link {
             font-size: 1.9em;
-            color: $blog-dark-green;
+            text-align: center;
+            color: $tan;
             transition: all 0.3s ease-in-out;
 
             &:hover {
                 transform: scale(1.2);
-                color: $blog-green;
+                color: $orange;
             }
         }
     }
@@ -180,10 +186,23 @@
 
         .widgets-left {
             display: flex;
+            align-items: center;
 
-            .open-widget {
-                color: $blog-blue;
+            .category-name {
+                color: $blog-dark-green;
+                padding-left: 0.25rem;
                 font-size: 1.2em;
+                transition: all 0.3s ease-in-out;
+
+                &:hover {
+                    cursor: pointer;
+                    transform: scale(1.1);
+                    color: $blog-green;
+                }
+            }
+
+            .back-widget {
+                color: $blog-blue;
                 transition: all 0.3s ease-in-out;
 
                 &:hover {
@@ -192,14 +211,27 @@
                 }
             }
 
-            .date-widget {
-                padding-left: 0.25rem;
-                color: $orange;
+            .open-widget {
+                color: $blog-blue;
+                font-size: 1.3em;
+                margin: 0 0.5rem;
+                transition: all 0.3s ease-in-out;
+
+                &:hover {
+                    transform: scale(1.2);
+                    color: $blog-dark-blue;
+                }
             }
         }
 
         .widgets-right {
             display: flex;
+            align-items: center;
+
+            .date-widget {
+                padding-left: 0.25rem;
+                color: $orange;
+            }
 
             .edit-widget {
                 color: $blog-green;
@@ -278,4 +310,15 @@
         color: $white;
         border-radius: 3px;
     }
+}
+
+// Blog Detail 
+
+.blog-detail {
+    width: 90%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+
+    
 }
