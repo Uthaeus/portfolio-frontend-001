@@ -10,7 +10,24 @@ function PortfolioNavigation() {
         <div className="portfolio-navigation">
             <div className="portfolio-navigation-main">
                 <div className="main-socials">
-                    socials
+                    <a href="example.com" target="_blank" className="portfolio-nav-social-link">
+                        <i className="bi bi-facebook"></i>
+                    </a>
+                    <a href="example.com" target="_blank" className="portfolio-nav-social-link">
+                        <i className="bi bi-twitter"></i>
+                    </a>
+                    <a href="example.com" target="_blank" className="portfolio-nav-social-link">
+                        <i className="bi bi-instagram"></i>
+                    </a>
+                    <a href="example.com" target="_blank" className="portfolio-nav-social-link">
+                        <i className="bi bi-linkedin"></i>
+                    </a>
+                    <a href="example.com" target="_blank" className="portfolio-nav-social-link">
+                        <i className="bi bi-youtube"></i>
+                    </a>
+                    <a href="example.com" target="_blank" className="portfolio-nav-social-link">
+                        <i className="bi bi-github"></i>
+                    </a>
                 </div>
 
                 <div className="main-links">
