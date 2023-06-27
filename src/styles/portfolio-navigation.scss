@@ -3,7 +3,7 @@
     width: 100%;
     padding: 0 1rem;
     padding-top: 0.5rem;
-    background-color: #161616;
+    background-color: $brown;
     box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.751);
 
     .portfolio-navigation-main {
@@ -19,14 +19,14 @@
             padding-bottom: 1.5rem;
 
             .portfolio-nav-social-link {
-                font-size: 1.8rem;
+                font-size: 2.2rem;
                 font-weight: 400;
-                color: $tan;
+                color: $black;
                 text-decoration: none;
                 transition: all 0.3s ease-in-out;
 
                 &:hover {
-                    filter: brightness(1.2);
+                    color: $red;
                     transform: scale(1.2);
                 }
             }
@@ -50,19 +50,19 @@
         .portfolio-link {
             font-size: 0.9em;
             padding: 0.2rem 0;
-            color: $blog-light-blue;
+            color: $light-grey;
             text-decoration: none;
             transition: all 0.3s ease-in-out;
 
             &:hover {
-                filter: brightness(1.2);
+                color: $blue;
                 transform: scale(1.2);
             }
         }
 
         .link-active {
-            color: $blog-blue;
-            border-bottom: 1px solid $blog-blue;
+            color: $dark-blue;
+            border-bottom: 1px solid $dark-blue;
             transform: scale(1.2);
         }
     }
@@ -85,10 +85,12 @@
         .nav-toggle {
             font-size: 1.4em;
             text-decoration: none;
-            color: $tan;
+            color: $grey;
+            margin-bottom: -0.3rem;
             transition: all 0.3s ease-in-out;
 
             &:hover {
+                cursor: pointer;
                 filter: brightness(1.2);
                 transform: scale(1.2);
             }

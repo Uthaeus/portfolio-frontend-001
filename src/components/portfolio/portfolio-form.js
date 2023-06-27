@@ -33,7 +33,7 @@ function PortfolioForm({ portfolio }) {
         formData.append('portfolio_item[title]', data.title);
         formData.append('portfolio_item[description]', data.description);
         formData.append('portfolio_item[url]', data.url);
-        formData.append('portfolio_item[technologies]', technologies);
+        formData.append('portfolio_item[technologies]', technologies.join(', '));
         formData.append('portfolio_item[image]', data.image[0]);
 
         return formData;
@@ -97,7 +97,7 @@ function PortfolioForm({ portfolio }) {
                 <div className="col-md-6">
                     <p>technologies used:</p>
                     <ul className="list-group">
-                        {technologies.map((tech) => <li key={tech} onClick={removeTechHandler}>{tech}</li>)}
+                        {technologies.map((tech, i) => <li key={i} onClick={() => removeTechHandler(tech)}>{tech}</li>)}
                     </ul>
                 </div>
             </div>

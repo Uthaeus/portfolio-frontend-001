@@ -17,6 +17,22 @@ function PortfolioNavigation() {
         setNavOpen(!navOpen);
     }
 
+    function logoutHandler() {
+        fetch('http://localhost:4000/users/sign_out', {
+            method: 'DELETE',
+            headers: {
+                'Authorization': `Bearer ${localStorage.getItem('token-001')}`
+            }
+        })
+        .then(res => {
+            if (res.ok) {
+                localStorage.removeItem('token-001');
+                logoutUser();
+            }
+        })
+        .catch(error => console.log('logout error', error));
+    }
+
     return (
         <div className="portfolio-navigation">
             <div className="portfolio-navigation-main">
@@ -51,7 +67,7 @@ function PortfolioNavigation() {
 
                 <div className="main-auth">
                     {user ? (
-                        <Link to="/" className="portfolio-link" onClick={logoutUser}>logout</Link>
+                        <Link className="portfolio-link" onClick={logoutHandler}>logout</Link>
                     ) : (
                         <>
                             <NavLink to="/sign-in" className={({isActive}) => isActive ? "portfolio-link link-active" : "portfolio-link"}>sign in</NavLink>
@@ -62,8 +78,14 @@ function PortfolioNavigation() {
             </div>
 
             <div className="portfolio-navigation-foot">
-                <Link className="nav-title">portfolio</Link>
-                <Link className="nav-toggle" onClick={navToggleHandler}>v</Link>
+                <Link className="nav-title">{user ? user.username : "homerj's portfolio"}</Link>
+                <p className="nav-toggle" onClick={navToggleHandler}>
+                    {navOpen ? (
+                        <i className="bi bi-caret-up-fill"></i>
+                    ) : (
+                        <i className="bi bi-caret-down-fill"></i>
+                    )}
+                </p>
             </div>
         </div>
     );

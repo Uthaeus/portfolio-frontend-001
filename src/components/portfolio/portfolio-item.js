@@ -5,7 +5,7 @@ function PortfolioItem({ portfolio }) {
 
     return (
         <div className="portfolio-item">
-            <img src={image} alt={portfolio.title} />
+            <img src={image} alt={portfolio.title} width='100%' />
             <div className="portfolio-item__title">{portfolio.title}</div>
             <div className="portfolio-item__description">{portfolio.description}</div>
             <div className="portfolio-item__link">

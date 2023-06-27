@@ -47,3 +47,40 @@
         grid-gap: 1rem;
     }
 }
+
+// Portfolio Detail 
+
+.portfolio-detail {
+    width: 100%;
+    min-height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    .portfolio-detail-left {
+        width: 100%;
+        padding: 1rem;
+
+        .portfolio-detail-title {
+            margin: 1rem;
+            font-size: 2.5rem;
+            font-weight: 400;
+            color: $dark-blue;
+        }
+
+        .portfolio-detail-body {
+            width: 100%;
+            display: grid;
+            grid-template-columns: 3fr 2fr;
+        }
+
+        .tech-item {
+            font-size: 1.2rem;
+            color: $dark-blue;
+        }
+    }
+
+    .portfolio-detail-right {
+        width: 100%;
+        border-left: 1px solid $dark-grey;
+    }
+}
