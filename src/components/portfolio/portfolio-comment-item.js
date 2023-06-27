@@ -1,6 +1,6 @@
 import defaultAvatar from '../../assets/images/hammer-thumb.jpg';
 
-function PortfolioCommentItem({ comment }) {
+function PortfolioCommentItem({ comment, user, removeCommentHandler }) {
 
     return (
         <div className="portfolio-comment-item">
@@ -11,6 +11,10 @@ function PortfolioCommentItem({ comment }) {
             <div className="comment-body">
                 <p className="comment-text">{comment.content}</p>
                 <p className="comment-details">posted by: <span className="comment-author">{comment.author}</span> <span className="comment-date">{comment.created_at.split('T')[0]}</span></p>
+
+                {(user?.role === 'site_admin' || user?.id === comment.user_id) && (
+                    <p className='comment-delete-btn' onClick={() => removeCommentHandler(comment.id)}>X</p>
+                )}
             </div>
         </div>
     );

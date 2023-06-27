@@ -26,6 +26,20 @@ function PortfolioDetail() {
         setComments([comment, ...comments]);
     }
 
+    function removeCommentHandler(id) {
+        fetch(`http://localhost:4000/portfolio_comments/${id}`, {
+            method: 'DELETE',
+            headers: {
+                'Authorization': `Bearer ${localStorage.getItem('token-001')}`
+            }
+        })
+        .then(response => response.json())
+        .then(data => console.log('comment delete success', data))
+        .catch(error => console.log('comment delete error', error));
+
+        setComments(comments.filter(comment => comment.id !== id));
+    }
+
     if (!portfolio) {
         return <div>Loading...</div>
     }
@@ -72,7 +86,7 @@ function PortfolioDetail() {
                     <p className="detail-comments-title">comments:</p>
 
                     <div className="detail-comments-wrapper">
-                        {comments.map((comment) => <PortfolioCommentItem key={comment.id} comment={comment} />)}
+                        {comments.map((comment) => <PortfolioCommentItem key={comment.id} comment={comment} removeCommentHandler={removeCommentHandler} user={user} />)}
                     </div>
                 </div>
             </div>
