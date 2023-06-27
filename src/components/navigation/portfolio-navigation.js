@@ -26,9 +26,12 @@ function PortfolioNavigation() {
         })
         .then(res => {
             if (res.ok) {
-                localStorage.removeItem('token-001');
-                logoutUser();
+                return res.json();
             }
+        })
+        .then(data => {
+            logoutUser();
+            localStorage.removeItem('token-001');
         })
         .catch(error => console.log('logout error', error));
     }

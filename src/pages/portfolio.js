@@ -25,7 +25,11 @@ function Portfolio() {
         <div className="portfolio-container">
             <div className="portfolio-header">
                 <h1 className="portfolio-title">Portfolio</h1>
-                <p className="portfolio-subtitle">quote here maybe</p>
+                <div className="portfolio-subtitle-wrapper">
+                    <p className="header-quote">I have not failed. I've just found 10,000 ways that won't work.</p> 
+                    <p className="header-author">-Thomas A. Edison</p>
+                </div>
+
                 {user && <Link to="/portfolio/new" className="new-portfolio-link">New Portfolio</Link>}
             </div>
 

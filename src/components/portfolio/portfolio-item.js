@@ -38,7 +38,7 @@ function PortfolioItem({ portfolio, user, removeItemHandler }) {
                         </>
                     )}
 
-                    <Link to={`/portfolio/${portfolio.id}`} className="item__link view-link">View Portfolio</Link>
+                    <Link to={`/portfolio/${portfolio.id}`} className="item__link view-link">View Project</Link>
                 </div>
             </div>
         </div>
