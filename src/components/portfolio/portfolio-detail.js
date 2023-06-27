@@ -3,9 +3,12 @@ import { useParams } from "react-router";
 import { Link } from "react-router-dom";
 
 import { UserContext } from "../../store/user-context";
+import PortfolioCommentForm from "./portfolio-comment-form";
+import PortfolioCommentItem from "./portfolio-comment-item";
 
 function PortfolioDetail() {
     const [portfolio, setPortfolio] = useState(null);
+    const [comments, setComments] = useState([]);
     const { id } = useParams();
     const { user } = useContext(UserContext);
 
@@ -14,9 +17,14 @@ function PortfolioDetail() {
             .then(response => response.json())
             .then(data => {
                 setPortfolio(data);
+                setComments(data.portfolio_comments);
             })
             .catch(error => console.log('portfolio error', error));
     }, [id]);
+
+    function addCommentHandler(comment) {
+        setComments([comment, ...comments]);
+    }
 
     if (!portfolio) {
         return <div>Loading...</div>
@@ -59,7 +67,13 @@ function PortfolioDetail() {
                 </div>
 
                 <div className="portfolio-detail-comments">
-                    comments here
+                    <PortfolioCommentForm user={user} portfolioId={portfolio.id} addCommentHandler={addCommentHandler} />
+
+                    <p className="detail-comments-title">comments:</p>
+
+                    <div className="detail-comments-wrapper">
+                        {comments.map((comment) => <PortfolioCommentItem key={comment.id} comment={comment} />)}
+                    </div>
                 </div>
             </div>
 
