@@ -166,7 +166,7 @@
         }
 
         .portfolio-detail-comments {
-            width: 90%;
+            width: 94%;
             margin: 1rem auto;
             padding: 1rem;
             display: flex;
@@ -198,7 +198,7 @@
 // Portfolio Comment form
 
 .portfolio-comment-form {
-    width: 400px;
+    width: 75%;
     padding: 0.5rem;
     margin-bottom: 1rem;
 
@@ -206,7 +206,7 @@
         font-size: 0.8em;
         padding: 0 1.5rem;
         border-radius: 2px;
-        background-color: $dark-blue;
+        background-color: $brown;
         color: $white;
         box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
         transition: all 0.3s ease-in-out;
@@ -222,14 +222,35 @@
 // Portfolio Comment Item
 
 .portfolio-comment-item {
-    width: 60%;
-    min-height: 125px;
+    width: 85%;
+    min-height: 100px;
     margin: 0.5rem 0;
-    padding: 0.5rem;
     border-radius: 5px;
     border: 1px solid $dark-grey;
     background-color: $white;
-    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2);
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 6fr;
+
+    .comment-avatar-wrapper {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .comment-avatar {
+            border-radius: 2px;
+            border: 1px solid $grey;
+            overflow: hidden;
+        }
+    }
+
+    .comment-body {
+        width: 100%;
+        padding: 0.25rem 0.6rem;
+    }
 
     .comment-text {
         font-weight: 400;
@@ -240,11 +261,87 @@
         text-align: right;
         font-size: 0.8rem;
         color: $grey;
+        position: absolute;
+        bottom: -0.6rem;
+        right: 0.5rem;
     }
 
     .comment-author {
         font-size: 1em;
         font-weight: 700;
         color: $brown;
+    }
+
+    .comment-date {
+        color: $green;
+    }
+}
+
+// Portfolio Item 
+
+.portfolio-item {
+    width: 100%;
+    height: 325px;
+    border-radius: 5px;
+    border: 1px solid $dark-grey;
+    box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.2);
+    background-color: $black;
+
+    .portfolio-item-image {
+        width: 100%;
+        height: 70%;
+    }
+
+    .item-body {
+        width: 100%;
+        height: 30%;
+        position: relative;
+
+        .item__title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: $tan;
+            padding: 0.5rem 0.5rem 0 0.5rem;
+        }
+
+        .item__links {
+            width: 100%;
+            display: flex;
+            justify-content: flex-end;
+            position: absolute;
+            bottom: 0.25rem;
+
+            .item__link {
+                margin: 0 0.5rem;
+                padding: 2px 1rem;
+                text-decoration: none;
+                text-align: center;
+                color: $white;
+                font-size: 0.8em;
+                border-radius: 3px;
+                border: 1px solid $dark-grey;
+                box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+                transition: all 0.3s ease-in-out;
+
+                &:hover {
+                    cursor: pointer;
+                    filter: brightness(1.2);
+                    transform: scale(1.04);
+                    box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.2);
+                }
+            }
+
+            .edit-link {
+                background-color: $green;
+            }
+
+            .delete-link {
+                background-color: $red;
+            }
+
+            .view-link {
+                background-color: $blue;
+            }
+        }
     }
 }

@@ -17,6 +17,10 @@ function Portfolio() {
             .catch(error => console.log('portfolio error', error));
     }, []);
 
+    function removeItemHandler(id) {
+        setPortfolios(portfolios.filter(portfolio => portfolio.id !== id));
+    }
+
     return (
         <div className="portfolio-container">
             <div className="portfolio-header">
@@ -26,7 +30,7 @@ function Portfolio() {
             </div>
 
             <div className="portfolio-items">
-                {portfolios.map(portfolio => <PortfolioItem key={portfolio.id} portfolio={portfolio} />)}
+                {portfolios.map(portfolio => <PortfolioItem key={portfolio.id} portfolio={portfolio} user={user} removeItemHandler={removeItemHandler} />)}
             </div>
         </div>
     )

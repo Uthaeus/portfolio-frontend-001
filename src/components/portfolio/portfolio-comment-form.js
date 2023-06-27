@@ -35,8 +35,7 @@ function PortfolioCommentForm({ user, addCommentHandler, portfolioId }) {
     return (
         <form onSubmit={handleSubmit(submitHandler)} className="portfolio-comment-form">
             <div className="form-group mb-2">
-                <label htmlFor="content">Comment</label>
-                <textarea className="form-control" rows={3} {...register("content", { required: true })} />
+                <textarea className="form-control" rows={3} placeholder="share your thoughts..." {...register("content", { required: true })} />
                 {errors.content && <span className="error">This field is required</span>}
             </div>
 
