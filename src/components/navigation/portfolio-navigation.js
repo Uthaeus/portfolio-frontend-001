@@ -1,10 +1,21 @@
 import { NavLink, Link } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 
 import { UserContext } from "../../store/user-context";
 
 function PortfolioNavigation() {
     const { user, logoutUser } = useContext(UserContext);
+    const [navOpen, setNavOpen] = useState(false);
+
+    function navToggleHandler() {
+        let element = document.querySelector('.portfolio-layout');
+        if (navOpen) {
+            element.classList.remove('portfolio-slide');
+        } else {
+            element.classList.add('portfolio-slide');
+        }
+        setNavOpen(!navOpen);
+    }
 
     return (
         <div className="portfolio-navigation">
@@ -52,7 +63,7 @@ function PortfolioNavigation() {
 
             <div className="portfolio-navigation-foot">
                 <Link className="nav-title">portfolio</Link>
-                <Link className="nav-toggle">v</Link>
+                <Link className="nav-toggle" onClick={navToggleHandler}>v</Link>
             </div>
         </div>
     );

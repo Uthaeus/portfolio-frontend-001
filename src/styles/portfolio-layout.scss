@@ -4,7 +4,13 @@
 
 .portfolio-layout {
     width: 100%;
-    min-height: 100vh;
-    background-color: $black;
-    color: $white;
+    margin-top: -155px;
+    min-height: calc(100vh + 155px);
+    // background-color: $black;
+    // color: $white;
+    transition: all 0.4s ease-in-out;
+}
+
+.portfolio-slide {
+    transform: translateY(155px);
 }
