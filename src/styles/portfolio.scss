@@ -165,14 +165,86 @@
             }
         }
 
-        .tech-item {
-            font-size: 1.2rem;
-            color: $dark-blue;
+        .portfolio-detail-comments {
+            width: 90%;
+            margin: 1rem auto;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+            border-top: 1px solid $dark-grey;
+
+            .detail-comments-title {
+                font-size: 1.1rem;
+                font-weight: 500;
+                color: $black;
+                padding-bottom: 0.5rem;
+            }
+
+            .detail-comments-wrapper {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+            }
         }
     }
 
     .portfolio-detail-right {
         width: 100%;
         border-left: 1px solid $dark-grey;
+    }
+}
+
+// Portfolio Comment form
+
+.portfolio-comment-form {
+    width: 400px;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+
+    .portfolio-comment-form-btn {
+        font-size: 0.8em;
+        padding: 0 1.5rem;
+        border-radius: 2px;
+        background-color: $dark-blue;
+        color: $white;
+        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+            filter: brightness(1.2);
+            transform: scale(1.04);
+            box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
+        }
+    }
+}
+
+// Portfolio Comment Item
+
+.portfolio-comment-item {
+    width: 60%;
+    min-height: 125px;
+    margin: 0.5rem 0;
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid $dark-grey;
+    background-color: $white;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.2);
+
+    .comment-text {
+        font-weight: 400;
+        color: $black;
+    }
+
+    .comment-details {
+        text-align: right;
+        font-size: 0.8rem;
+        color: $grey;
+    }
+
+    .comment-author {
+        font-size: 1em;
+        font-weight: 700;
+        color: $brown;
     }
 }
