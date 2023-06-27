@@ -60,17 +60,60 @@
         width: 100%;
         padding: 1rem;
 
-        .portfolio-detail-title {
-            margin: 1rem;
-            font-size: 2.5rem;
-            font-weight: 400;
-            color: $dark-blue;
+        .portfolio-detail-header {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+
+            .portfolio-detail-title {
+                margin: 1rem;
+                font-size: 2.5rem;
+                font-weight: 400;
+                color: $dark-blue;
+            }
+
+            .portfolio-detail-actions {
+                display: flex;
+
+                .portfolio-detail-action {
+                    width: 100px;
+                    font-size: 1.2rem;
+                    font-weight: 400;
+                    color: $white;
+                    margin: 0 0.5rem;
+                    padding: 2px 0;
+                    transition: all 0.3s ease-in-out;
+
+                    &:hover {
+                        filter: brightness(1.2);
+                        transform: scale(1.04);
+                    }
+                }
+
+                .edit-action {
+                    background-color: $green;
+                }
+
+                .delete-action {
+                    background-color: $red;
+                }
+
+                .back-action {
+                    background-color: $dark-blue;
+                }
+            }
         }
 
         .portfolio-detail-body {
             width: 100%;
             display: grid;
             grid-template-columns: 3fr 2fr;
+
+            .portfolio-detail-body-left {
+                width: 90%;
+                margin: 0.5rem auto;
+            }
         }
 
         .tech-item {
