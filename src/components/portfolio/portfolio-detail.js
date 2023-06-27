@@ -6,11 +6,14 @@ import { UserContext } from "../../store/user-context";
 import PortfolioCommentForm from "./portfolio-comment-form";
 import PortfolioCommentItem from "./portfolio-comment-item";
 
+import Calculator from "../projects/calculator/calculator";
+
 function PortfolioDetail() {
     const [portfolio, setPortfolio] = useState(null);
     const [comments, setComments] = useState([]);
     const { id } = useParams();
     const { user } = useContext(UserContext);
+    let component;
 
     useEffect(() => {
         fetch(`http://localhost:4000/portfolio_items/${id}`)
@@ -44,11 +47,23 @@ function PortfolioDetail() {
         return <div>Loading...</div>
     }
 
+    switch (portfolio.title) {
+        case 'Calculator':
+            component = <Calculator />;
+            break;
+        default:
+            component = <div>Component not found</div>;
+    }
+
     return (
         <div className="portfolio-detail">
             <div className="portfolio-detail-left">
                 <div className="portfolio-detail-header">
-                    <h2 className="portfolio-detail-title">{portfolio.title}</h2>
+                    <div className="portfolio-detail-header-left">
+                        <h2 className="portfolio-detail-title">{portfolio.title}</h2>
+
+                        {portfolio.url && <a href={portfolio.url} target="_blank" rel='noreferrer' className='detail-item-link'>{portfolio.url}</a>}
+                    </div>
 
                     <div className="portfolio-detail-actions">
                         {user?.role === 'site_admin' && (
@@ -83,8 +98,6 @@ function PortfolioDetail() {
                 <div className="portfolio-detail-comments">
                     <PortfolioCommentForm user={user} portfolioId={portfolio.id} addCommentHandler={addCommentHandler} />
 
-                    <p className="detail-comments-title">comments:</p>
-
                     <div className="detail-comments-wrapper">
                         {comments.map((comment) => <PortfolioCommentItem key={comment.id} comment={comment} removeCommentHandler={removeCommentHandler} user={user} />)}
                     </div>
@@ -92,7 +105,7 @@ function PortfolioDetail() {
             </div>
 
             <div className="portfolio-detail-right">
-                component
+                {component}
             </div>
         </div>
     );

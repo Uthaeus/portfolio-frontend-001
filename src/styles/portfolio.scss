@@ -78,12 +78,10 @@
             width: 100%;
             padding: 1rem;
             margin: 1rem auto;
-            display: flex;
-            justify-content: space-between;
-            align-items: baseline;
             background-color: $tan;
             border-radius: 4px;
             box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
+            position: relative;
 
             .portfolio-detail-title {
                 margin: 1rem;
@@ -92,8 +90,24 @@
                 color: $dark-blue;
             }
 
+            .detail-item-link {
+                font-size: 1.2em;
+                font-weight: 400;
+                color: $blue;
+                margin-left: 2rem;
+                transition: all 0.3s ease-in-out;
+
+                &:hover {
+                    color: blue;
+                    transform: scale(1.2);
+                }
+            }
+
             .portfolio-detail-actions {
                 display: flex;
+                position: absolute;
+                bottom: 0.5rem;
+                right: 0;
 
                 .portfolio-detail-action {
                     width: 100px;
@@ -125,7 +139,7 @@
                 }
 
                 .back-action {
-                    background-color: $blue;
+                    background-color: $dark-blue1;
                 }
             }
         }
@@ -196,7 +210,6 @@
                 font-size: 1.1rem;
                 font-weight: 500;
                 color: $black;
-                padding-bottom: 0.5rem;
             }
 
             .detail-comments-wrapper {
@@ -210,7 +223,8 @@
 
     .portfolio-detail-right {
         width: 100%;
-        border-left: 1px solid $dark-grey;
+        height: 100vh;
+        padding-top: 1rem;
     }
 }
 
@@ -282,7 +296,6 @@
 
             &:hover {
                 cursor: pointer;
-                color: $red1;
                 transform: scale(1.2);
             }
         }
