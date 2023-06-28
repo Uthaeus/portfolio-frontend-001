@@ -1,4 +1,4 @@
-import { NavLink } from "react-router-dom";
+import { NavLink, Link } from "react-router-dom";
 import { useContext } from "react";
 
 import { UserContext } from "../../store/user-context";
@@ -38,7 +38,7 @@ function BlogNavigation() {
             </div>
 
             <div className="blog-navigation__auth">
-                {user ? <NavLink onClick={logoutHandler} className="blog-nav-link">Sign Out</NavLink> : (
+                {user ? <Link onClick={logoutHandler} className="blog-nav-link">Sign Out</Link> : (
                     <>
                         <NavLink to="/sign-in" className="blog-nav-link">Sign In</NavLink>
                         <NavLink to="/sign-up" className="blog-nav-link">Sign Up</NavLink>

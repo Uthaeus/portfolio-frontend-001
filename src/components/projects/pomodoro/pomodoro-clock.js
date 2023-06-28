@@ -1,9 +1,8 @@
 import { useState, useEffect, useContext } from 'react';
 
-import { UserContext } from '../../store/user-context';
+import { UserContext } from '../../../store/user-context';
 import Display from './display';
 import Settings from './settings';
-import { set } from 'react-hook-form';
 
 function PomodoroClock() {
     const [sessionLength, setSessionLength] = useState(25);
@@ -28,7 +27,6 @@ function PomodoroClock() {
             }
         });
     }
-    
 
     function resetHandler() {
         setSessionLength(25);
@@ -39,8 +37,6 @@ function PomodoroClock() {
         clearInterval(countdown);
     }
 
-    // q: why is clearInterval(timer) not working?
-    // a: because timer is not a function, it's a number. clearInterval() expects a function.
     function startStopHandler() {
         console.log('startStopHandler');
         if (isRunning) {

@@ -93,7 +93,13 @@
         font-size: 1.4em;
         font-weight: 600;
         color: $blog-green;
-        padding: 1rem;
+        padding-left: 1rem;
+    }
+
+    .reset-link {
+        color: $red;
+        text-decoration: underline;
+        margin-left: 1.5rem;
     }
 
     .blog-sidebar-categories {
@@ -132,11 +138,10 @@
 
     .blog-sidebar-socials {
         width: 60%;
-        margin: 0 auto;
+        margin: 1rem auto;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-gap: 0.5rem 1rem;
-        margin-bottom: 1rem;
         border-bottom: 1px solid $blog-dark-blue;
         padding-bottom: 1rem;
 

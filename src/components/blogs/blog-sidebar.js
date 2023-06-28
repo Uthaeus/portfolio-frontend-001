@@ -1,10 +1,12 @@
 import { useState, useEffect } from "react";
 
 import BlogCategoryForm from "./blog-category-form";
+import BlogCategoryItem from "./blog-category-item";
 
 function BlogSidebar({ user, categoryFilterHandler }) {
     const [categories, setCategories] = useState([]);
     const [showCategoryForm, setShowCategoryForm] = useState(false);
+    
 
     useEffect(() => {
         fetch("http://localhost:4000/categories")
@@ -17,6 +19,8 @@ function BlogSidebar({ user, categoryFilterHandler }) {
         setCategories([...categories, category]);
     }
 
+    
+
     return (
         <div className="blog-sidebar">
             {user?.role === 'site_admin' && <p onClick={() => setShowCategoryForm(!showCategoryForm)} className="new-category-link">{showCategoryForm ? 'close' : 'create category'}</p>}
@@ -24,18 +28,11 @@ function BlogSidebar({ user, categoryFilterHandler }) {
             {showCategoryForm && <BlogCategoryForm addCategoryHandler={addCategoryHandler} />}
 
             <h2 className="blog-sidebar-title">categories</h2>
+            <p onClick={() => categoryFilterHandler("all")} className="reset-link">reset</p>
 
             <ul className="blog-sidebar-categories">
-                <li className="category-wrapper">
-                    <p onClick={() => categoryFilterHandler("all")} className="category-name">all</p>
-                </li>
 
-                {categories.map((category) => (
-                    <li className="category-wrapper" key={category.id}>
-                        <p onClick={() => categoryFilterHandler(category.id)} className="category-name">{category.name}</p>
-                        {user?.role === 'site_admin' && <p className="category-delete"><i className="bi bi-trash"></i></p>}
-                    </li>
-                ))}
+                {categories.map((category) => <BlogCategoryItem key={category.id} category={category} user={user} categoryFilterHandler={categoryFilterHandler} />)}
             </ul>
 
             <h2 className="blog-sidebar-title">socials</h2>

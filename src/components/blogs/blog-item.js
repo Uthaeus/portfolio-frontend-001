@@ -21,8 +21,6 @@ function BlogItem({ blog, user, removeBlogHandler, categoryFilterHandler }) {
             .catch((error) => console.log("delete blog error", error));
     }
 
-    console.log('blog', blog);
-
     return (
         <div className="blog-item">
             <p className="blog-item-title">{blog.title}</p>

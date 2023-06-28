@@ -2,7 +2,7 @@ import { useState, useContext } from "react";
 
 import MarkdownEditor from "./markdown-editor";
 import MarkdownPreview from "./markdown-preview";
-import { UserContext } from "../../store/user-context";
+import { UserContext } from "../../../store/user-context";
 
 
 function MarkdownPreviewer() {

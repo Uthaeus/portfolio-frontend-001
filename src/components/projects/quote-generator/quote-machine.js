@@ -1,7 +1,7 @@
 import { useState, useContext } from "react";
 
 import { colorSchemes } from "./color-schemes";
-import { UserContext } from "../../store/user-context";
+import { UserContext } from "../../../store/user-context";
 import { quoteList } from "./quote-list";
 
 const initialQuote = {
