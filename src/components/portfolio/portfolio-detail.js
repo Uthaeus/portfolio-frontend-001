@@ -7,6 +7,11 @@ import PortfolioCommentForm from "./portfolio-comment-form";
 import PortfolioCommentItem from "./portfolio-comment-item";
 
 import Calculator from "../projects/calculator/calculator";
+import DrumMachine from "../projects/drum-machine/drum-machine";
+import MarkdownPreviewer from "../projects/markdown/markdown";
+import PomodoroClock from "../projects/pomodoro/pomodoro-clock";
+import QuoteGenerator from "../projects/quote-generator/quote-machine";
+import DefaultComponent from "../projects/default-component";
 
 function PortfolioDetail() {
     const [portfolio, setPortfolio] = useState(null);
@@ -51,8 +56,20 @@ function PortfolioDetail() {
         case 'Calculator':
             component = <Calculator />;
             break;
+        case 'Drum Machine':
+            component = <DrumMachine />;
+            break;
+        case 'Markdown Previewer':
+            component = <MarkdownPreviewer />;
+            break;
+        case 'Pomodoro Clock':
+            component = <PomodoroClock />;
+            break;
+        case 'Quote Generator':
+            component = <QuoteGenerator />;
+            break;
         default:
-            component = <div>Component not found</div>;
+            component = <DefaultComponent />;
     }
 
     return (

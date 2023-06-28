@@ -11,7 +11,7 @@ const initialQuote = {
   user_id: 1,
 };
 
-function QuoteMachine() {
+function QuoteGenerator() {
   const [quote, setQuote] = useState(initialQuote);
   const [quotes, setQuotes] = useState(quoteList);
   const [colors, setColors] = useState([]);
@@ -137,4 +137,4 @@ function QuoteMachine() {
   );
 }
 
-export default QuoteMachine;
+export default QuoteGenerator;
