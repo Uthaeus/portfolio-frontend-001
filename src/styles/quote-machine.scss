@@ -1,0 +1,97 @@
+
+.quote-machine-container {
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(30deg, $blue, $white, $tan, $light-blue, $black);
+
+    .quote-machine-title {
+        width: 40%;
+        font-size: 3em;
+        font-weight: bold;
+        color: $black;
+        margin: 5rem 2rem;
+        border-bottom: 1px solid $tan;
+    }
+
+    .quote-machine {
+        width: 80%;
+        height: 45vh;
+        margin: 2rem auto;
+        background-color: $white;
+        border-radius: 0.5rem;
+        box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.3);
+        position: relative;
+
+        .quote-machine__quote {
+            width: 90%;
+            font-size: 2em;
+            font-weight: bold;
+            padding: 2rem;
+        }
+
+        .quote-machine__author {
+            font-size: 1.5em;
+            padding: 1rem;
+            text-align: right;
+            position: absolute;
+            bottom: 0;
+            right: 0;
+        }
+    }
+
+    .quote-machine-actions {
+        width: 80%;
+        margin: 3rem auto;
+        display: flex;
+        align-items: flex-start;
+
+        .quote-machine-btn {
+            width: 25%;
+            height: 35px;
+            background-color: $dark-blue1;
+            color: $white;
+            margin-right: 4rem;
+            font-size: 1.1em;
+            font-weight: bold;
+            padding: 4px 22px;
+            border-radius: 4px;
+            box-shadow: 2px 2px 2px 0 rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease-in-out;
+
+            &:hover {
+                transform: scale(1.02);
+                box-shadow: 4px 4px 4px 0 rgba(0, 0, 0, 0.3);
+            }
+        }
+
+        .tweet-btn {
+            float: right;
+            font-size: 2em;
+            text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+            color: $blue1;
+            margin-right: 3rem;
+            transition: all 0.3s ease-in-out;
+
+            &:hover {
+                cursor: pointer;
+                transform: scale(1.06);
+                text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
+            }
+        }
+
+        .like-btn {
+            text-align: right;
+            font-size: 1.2em;
+            color: $calc-dark-red;
+            text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s ease-in-out;
+
+            &:hover {
+                cursor: pointer;
+                transform: scale(1.2);
+                text-shadow: 4px 4px 4px rgba(0, 0, 0, 0.3);
+            }
+            
+        }
+    }
+}

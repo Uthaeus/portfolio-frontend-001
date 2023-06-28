@@ -1,0 +1,202 @@
+
+.pomodoro-clock-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: $black;
+
+    .pomodoro-clock-title {
+        font-size: 2.5rem;
+        margin: 2rem 3rem;
+        padding: 1rem;
+        color: $red3;
+    }
+}
+
+.settings-wrapper {
+    width: 90%;
+    height: 175px;
+    margin: 0 auto;
+    border-radius: 4px;
+    background: $red3;
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    box-shadow: 0 0 15px 2px rgba(1, 1, 1, 0.678);
+
+    .settings-item-wrapper {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .settings-item {
+            width: 92%;
+            height: 92%;
+            margin: auto;
+            border-radius: 3px;
+        }
+
+        .session-item {
+            display: grid;
+            grid-template-columns: 4fr 1fr;
+            grid-gap: 1px;
+        }
+
+        .break-item {
+            display: grid;
+            grid-template-columns: 1fr 4fr;
+            grid-gap: 1px;
+        }
+    }
+
+    .settings-item-display {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: $cream3;
+        box-shadow: inset 0 0 10px rgba(10, 10, 10, 0.425);
+
+        .settings-item-display-item {
+            font-size: 5em;
+            font-weight: bold;
+            color: $red3;
+        }
+    }
+
+    .settings-item-actions {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+
+        .settings-item-btn {
+            width: 100%;
+            height: 50%;
+            border: none;
+            border-radius: 2px;
+            background-color: $cream3;
+            color: $red3;
+            box-shadow: inset 0 0 6px rgba(10, 10, 10, 0.425);
+            font-size: 1.4em;
+            transition: all 0.4s ease-in-out;
+
+            &:hover {
+                cursor: pointer;
+                filter: brightness(1.2);
+                transform: scale(1.06);
+            }
+        }
+    }
+
+    .settings-controls-wrapper {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        position: relative;
+
+        .settings-user-title {
+            position: absolute;
+            top: 0.5rem;
+            font-size: 1.5em;
+            color: $black;
+        }
+
+        .controls-indicator-wrapper {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .indicator {
+                width: 20px;
+                height: 20px;
+                border: 1px solid $grey1;
+                border-radius: 50%;
+                background-color: $black;
+                transition: all 0.5s ease-in-out;
+            }
+
+            .indicator-active {
+                background-color: $active-green;
+                box-shadow: 3px 3px 6px #00a67f71;
+            }
+
+            .current-mode-label {
+                width: 60%;
+                text-align: center;
+                font-size: 2.6em;
+                letter-spacing: 4px;
+                text-shadow: 2px 2px 4px rgba(1, 1, 1, 0.53);
+                color: $dark-yellow3;
+                padding-bottom: 0.5rem;
+                border-bottom: 1px solid $black;
+            }
+        }
+    }
+}
+
+
+
+.controls-wrapper {
+    width: 100%;
+    height: 50px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+
+    .control-btn {
+        height: 40px;
+        border-radius: 2px;
+        border: 1px solid $black;
+        background-color: $cream3;
+        color: $red3;
+        font-size: 1.4em;
+        margin-bottom: 1rem;
+        box-shadow: 2px 2px 6px rgba(1, 1, 1, 0.53);
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+            cursor: pointer;
+            box-shadow: 3px 3px 8px rgba(1, 1, 1, 0.53);
+            transform: scale(1.03);
+        }
+    }
+
+    .control-mode-btn {
+        width: 21%;
+        font-size: 1.1em;
+    }
+
+    .start-stop-btn {
+        width: 33%;
+    }
+
+    .reset-btn {
+        width: 22%;
+    }
+}
+
+.display-wrapper {
+    width: 60%;
+    height: 350px;
+    margin: 3rem auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .display-time {
+        font-size: 9em;
+        font-weight: bold;
+        color: $dark-red3;
+        text-shadow: 3px 3px 8px rgba(1, 1, 1, 0.678);
+        letter-spacing: 5px;
+        padding-bottom: 3rem;
+    }
+}
