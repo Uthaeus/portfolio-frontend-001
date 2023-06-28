@@ -11,4 +11,3 @@
 - add avatars to users
 - add footer to portfolio
 - check links in blog detail widget
-- add styling to blog and portfolio new/edit forms

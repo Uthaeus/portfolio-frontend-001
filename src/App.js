@@ -19,6 +19,8 @@ import Portfolio from "./pages/portfolio";
 import PortfolioDetail from "./components/portfolio/portfolio-detail";
 import EditPortfolio from "./components/portfolio/edit-portfolio";
 import NewPortfolio from "./components/portfolio/new-portfolio";
+import EditUser from "./components/auth/edit-user";
+import Userpage from "./pages/userpage";
 
 const router = createBrowserRouter([
   {
@@ -39,12 +41,20 @@ const router = createBrowserRouter([
         element: <Contactpage />
       },
       {
+        path: "/userpage",
+        element: <Userpage />
+      },
+      {
         path: "/sign-in",
         element: <SignIn />
       },
       {
         path: "/sign-up",
         element: <SignUp />
+      },
+      {
+        path: "/edit-user",
+        element: <EditUser />
       }
     ]
   },
