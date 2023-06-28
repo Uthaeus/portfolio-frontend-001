@@ -2,7 +2,7 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router";
 import { useContext } from "react";
 
-import defaultAvatar from '../../assets/images/hammer-thumb.jpg';
+// import defaultAvatar from '../../assets/images/hammer-thumb.jpg';
 
 import { UserContext } from "../../store/user-context";
 

@@ -2,6 +2,7 @@ import { NavLink, Link } from "react-router-dom";
 import { useContext } from "react";
 
 import { UserContext } from "../../store/user-context";
+import MainUserItem from "./main-user-item";
 
 function MainNavigation() {
     const { user, logoutUser } = useContext(UserContext);
@@ -27,7 +28,8 @@ function MainNavigation() {
     return (
         <div className="main-navigation">
             <div className="main-navigation-head">
-                <p className="head-welcome">{user ? user.username : 'Hello'}</p>
+
+                {user ? <MainUserItem user={user} /> : <p className="head-welcome">Hello</p>}
             </div>
 
             <div className="main-navigation-links">

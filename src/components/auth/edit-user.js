@@ -4,6 +4,7 @@ import { useContext } from "react";
 import { Link } from "react-router-dom";
 
 import { UserContext } from "../../store/user-context";
+import defaultAvatar from '../../assets/images/hammer-thumb.jpg';
 
 function EditUser() {
     const { user, loginUser } = useContext(UserContext);
