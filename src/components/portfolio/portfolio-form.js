@@ -94,7 +94,7 @@ function PortfolioForm({ portfolio }) {
                         <p className="add-tech-link" onClick={addTechHandler}>add</p>
                     </div>
 
-                    <button type="submit" className="portfolio-form-btn">Save</button>
+                    <button type="submit" className="portfolio-form-btn">{portfolio ? 'Update' : 'Save'}</button>
                 </div>
                 <div className="col-md-6">
                     <p className="tech-title">technologies used:</p>

@@ -399,57 +399,52 @@
 // Portfolio New/Edit Form
 
 .portfolio-newedit {
-    width: 100%;
-    min-height: 75vh;
+    width: 80%;
+    margin: 1rem auto;
     display: flex;
     flex-direction: column;
 
     .portfolio-newedit-title {
-        font-size: 1.5rem;
+        font-size: 2.5rem;
         font-weight: 700;
-        color: $blue;
+        color: $black;
         margin: 1rem 0;
     }
 
     .portfolio-newedit-link {
         font-size: 1.2rem;
         font-weight: 700;
-        color: $blue;
+        color: $light-grey;
     }
 }
 
 .portfolio-form {
-    width: 60%;
+    width: 45%;
     margin: 1rem auto;
 
     .add-tech-link {
         font-size: 0.8rem;
         font-weight: 700;
-        color: $blue;
+        color: $light-blue;
         margin: 0.5rem 0;
         transition: all 0.3s ease-in-out;
 
         &:hover {
             cursor: pointer;
             color: $dark-blue;
-            transform: scale(1.1);
         }
     }
 
     .tech-title {
         font-size: 1.2rem;
         font-weight: 700;
-        color: $green;
+        color: $tan;
         margin: 0.5rem;
     }
 
     .list-group {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        justify-content: flex-end;
-        align-items: center;
         margin: 0.5rem 0;
+        padding-left: 4rem;
     }
 
     .tech-item {
@@ -458,7 +453,7 @@
     }
 
     .portfolio-form-btn {
-        width: 30%;
+        width: 50%;
         border-radius: 3px;
         background-color: $brown;
         color: $white;

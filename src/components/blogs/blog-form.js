@@ -56,34 +56,40 @@ function BlogForm({ blog }) {
 
     return (
         <form onSubmit={handleSubmit(submitHandler)} className="blog-form">
-            <div className="form-group mb-2">
-                <label htmlFor="title">Title</label>
-                <input type='text' className="form-control" {...register("title", {required: true})} />
-                {errors?.title && <span className="text-danger">This field is required</span>}
-            </div>
+            <div className='row'>
+                <div className="col-md-5">
+                    <div className="form-group mb-2">
+                        <label htmlFor="title">Title</label>
+                        <input type='text' className="form-control" {...register("title", {required: true})} />
+                        {errors?.title && <span className="text-danger">This field is required</span>}
+                    </div>
 
-            <div className="form-group mb-2">
-                <label htmlFor="category">Category</label>
-                <select className="form-control" {...register("category_id", {required: true})}>
-                    <option value="">Select a category</option>
-                    {categories.map((category) => (
-                        <option key={category.id} value={category.id}>{category.name}</option>
-                    ))}
-                </select>
-            </div>
+                    <div className="form-group mb-2">
+                        <label htmlFor="category">Category</label>
+                        <select className="form-control" {...register("category_id", {required: true})}>
+                            <option value="">Select a category</option>
+                            {categories.map((category) => (
+                                <option key={category.id} value={category.id}>{category.name}</option>
+                            ))}
+                        </select>
+                    </div>
 
-            <div className="form-group mb-2">
-                <label htmlFor="image">Image</label>
-                <input type='file' className="form-control" {...register("image", {required: true})} />
-            </div>
+                    <div className="form-group mb-4">
+                        <label htmlFor="image">Image</label>
+                        <input type='file' className="form-control" {...register("image", {required: true})} />
+                    </div>
 
-            <div className="form-group mb-3">
-                <label htmlFor="body">Body</label>
-                <textarea className="form-control" rows={5} {...register("body", {required: true})} />
-                {errors?.body && <span className="text-danger">This field is required</span>}
+                    <button type="submit" className="blog-form-btn mb-2">Submit</button>
+                </div>
+            
+                <div className="col-md-7">
+                    <div className="form-group mb-3">
+                        <label htmlFor="body">Body</label>
+                        <textarea className="form-control" rows={9} {...register("body", {required: true})} />
+                        {errors?.body && <span className="text-danger">This field is required</span>}
+                    </div>
+                </div>
             </div>
-
-            <button type="submit" className="blog-form-btn mb-2">Submit</button>
         </form>
     );
 }

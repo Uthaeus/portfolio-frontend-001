@@ -20,7 +20,6 @@ function EditBlog() {
         <div className="blogs-newedit-container">
             <h1 className="blogs-newedit-title">Edit Blog</h1>
             <Link to="/blogs" className="blogs-newedit-link">Back to Blogs</Link>
-            <hr />
 
             <BlogForm blog={blog} />
         </div>
