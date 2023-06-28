@@ -30,13 +30,11 @@ function SignUp() {
         .then(response => {
             if (response.ok) {
                 let token = response.headers.get('Authorization').split(' ')[1];
-                console.log('setting token', token);
                 localStorage.setItem('token-001', token);
                 return response.json();
             }
         })
         .then(data => {
-            console.log('sign up data', data);
             loginUser(data.data);
             navigate('/');
         })

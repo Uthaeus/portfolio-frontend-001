@@ -53,15 +53,15 @@ function BlogDetail() {
                     <div className="blog-detail-header">
                         <h3 className="blog-detail-title">{blog?.title}</h3>
 
-                        <img src={`http://localhost:4000${blog?.image?.url}`} alt={blog?.title} className="blog-detail-image" width='30%' />
+                        <img src={`http://localhost:4000${blog?.image?.url}`} alt={blog?.title} className="blog-detail-image" width='30%' maxheight='125px' />
                     </div>
 
                     <div className="blog-detail-widgets">
                         <div className="detail-widgets-left">
-                            <Link to="/blogs" className="blog-detail-back">blogs</Link> /
+                            <Link to="/blogs" className="blog-detail-back">{'<< blogs'}</Link> /
                             <p className="detail-widget-item">{blog.id}</p> /
                             <p className="detail-widget-item">{blog.title}</p> /
-                            <Link to={`/blogs/${id}/edit`} className="blog-detail-category">{blog.category?.name}</Link>
+                            <Link to={`/blogs/${id}`} className="blog-detail-category">{blog.category?.name}</Link>
                         </div>
 
                         <div className="detail-widgets-right">

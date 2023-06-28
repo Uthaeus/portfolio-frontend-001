@@ -94,12 +94,20 @@
         font-weight: 600;
         color: $blog-green;
         padding-left: 1rem;
+        text-decoration: underline;
     }
 
     .reset-link {
         color: $red;
         text-decoration: underline;
         margin-left: 1.5rem;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+            filter: brightness(1.2);
+            cursor: pointer;
+            transform: scale(1.04);
+        }
     }
 
     .blog-sidebar-categories {
@@ -145,7 +153,8 @@
 
     .blog-sidebar-socials {
         width: 60%;
-        margin: 1rem auto;
+        margin: 0 auto;
+        margin-top: 2rem;
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-gap: 0.5rem 1rem;
@@ -338,20 +347,22 @@
 
             .blog-detail-header {
                 width: 100%;
+                max-height: 150px;
                 display: flex;
                 justify-content: space-between;
                 align-items: flex-end;
-                margin-bottom: 1rem;
+                margin-bottom: 3rem;
+                overflow: hidden;
 
                 .blog-detail-title {
-                    font-size: 2.5em;
+                    font-size: 2.9em;
                     font-weight: 600;
                     color: $blog-dark-blue;
                 }
 
                 .blog-detail-image {
                     margin-right: 1rem;
-                    max-height: 250px;
+                    max-height: 125px;
                     border-radius: 4px;
                     overflow: hidden;
                     box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.2);
