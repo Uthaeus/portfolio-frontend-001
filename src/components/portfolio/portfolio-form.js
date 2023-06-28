@@ -63,46 +63,48 @@ function PortfolioForm({ portfolio }) {
 
     return (
         <form className="portfolio-form" onSubmit={handleSubmit(submitHandler)}>
-            <div className="form-group">
+            <div className="form-group mb-2">
                 <label htmlFor="title">Title</label>
                 <input type="text" className="form-control" {...register("title", { required: true })} />
                 {errors.title && <span className="text-danger">Title is required</span>}
             </div>
 
-            <div className="form-group">
+            <div className="form-group mb-2">
                 <label htmlFor="description">Description</label>
                 <textarea className="form-control" rows={3} {...register("description", { required: true })}></textarea>
                 {errors.description && <span className="text-danger">Description is required</span>}
             </div>
 
-            <div className="form-group">
+            <div className="form-group mb-2">
                 <label htmlFor="url">URL</label>
                 <input type="text" className="form-control" {...register("url")} />
             </div>
 
-            <div className="form-group">
+            <div className="form-group mb-2">
                 <label htmlFor="image">Image</label>
                 <input type="file" className="form-control" {...register("image", {required: true})} />
                 {errors.image && <span className="text-danger">Image is required</span>}
             </div>
 
-            <div className="row">
+            <div className="row mb-2">
                 <div className="col-md-6">
-                    <div className="form-group">
+                    <div className="form-group mb-2">
                         <label htmlFor="technologies">Technologies</label>
                         <input type="text" className="form-control" value={currentTech} onChange={techChangeHandler} />
                         <p className="add-tech-link" onClick={addTechHandler}>add</p>
                     </div>
+
+                    <button type="submit" className="portfolio-form-btn">Save</button>
                 </div>
                 <div className="col-md-6">
-                    <p>technologies used:</p>
+                    <p className="tech-title">technologies used:</p>
                     <ul className="list-group">
-                        {technologies.map((tech, i) => <li key={i} onClick={() => removeTechHandler(tech)}>{tech}</li>)}
+                        {technologies.map((tech, i) => <li key={i} className="tech-item" onClick={() => removeTechHandler(tech)}>{tech}</li>)}
                     </ul>
                 </div>
             </div>
 
-            <button type="submit" className="portfolio-form-btn">Save</button>
+            
         </form>
     );
 }

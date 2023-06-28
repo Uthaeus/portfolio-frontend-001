@@ -5,9 +5,9 @@ import BlogForm from "./blog-form";
 function NewBlog() {
 
     return (
-        <div className="blogs-container">
-            <h1 className="blogs-title">New Blog</h1>
-            <Link to="/blogs" className="blogs-link">Back to Blogs</Link>
+        <div className="blogs-newedit-container">
+            <h1 className="blogs-newedit-title">New Blog</h1>
+            <Link to="/blogs" className="blogs-newedit-link">Back to Blogs</Link>
             <hr />
 
             <BlogForm />

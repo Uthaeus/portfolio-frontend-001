@@ -17,9 +17,9 @@ function EditBlog() {
     }, [id]);
 
     return (
-        <div className="blogs-container">
-            <h1 className="blogs-title">Edit Blog</h1>
-            <Link to="/blogs" className="blogs-link">Back to Blogs</Link>
+        <div className="blogs-newedit-container">
+            <h1 className="blogs-newedit-title">Edit Blog</h1>
+            <Link to="/blogs" className="blogs-newedit-link">Back to Blogs</Link>
             <hr />
 
             <BlogForm blog={blog} />

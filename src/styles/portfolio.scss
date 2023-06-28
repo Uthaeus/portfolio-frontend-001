@@ -395,3 +395,81 @@
         }
     }
 }
+
+// Portfolio New/Edit Form
+
+.portfolio-newedit {
+    width: 100%;
+    min-height: 75vh;
+    display: flex;
+    flex-direction: column;
+
+    .portfolio-newedit-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: $blue;
+        margin: 1rem 0;
+    }
+
+    .portfolio-newedit-link {
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: $blue;
+    }
+}
+
+.portfolio-form {
+    width: 60%;
+    margin: 1rem auto;
+
+    .add-tech-link {
+        font-size: 0.8rem;
+        font-weight: 700;
+        color: $blue;
+        margin: 0.5rem 0;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+            cursor: pointer;
+            color: $dark-blue;
+            transform: scale(1.1);
+        }
+    }
+
+    .tech-title {
+        font-size: 1.2rem;
+        font-weight: 700;
+        color: $green;
+        margin: 0.5rem;
+    }
+
+    .list-group {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+        margin: 0.5rem 0;
+    }
+
+    .tech-item {
+        font-size: 1.4rem;
+        color: $orange;
+    }
+
+    .portfolio-form-btn {
+        width: 30%;
+        border-radius: 3px;
+        background-color: $brown;
+        color: $white;
+        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.358);
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+            cursor: pointer;
+            filter: brightness(1.2);
+            transform: scale(1.04);
+            box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.358);
+        }
+    }
+}

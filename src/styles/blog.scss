@@ -569,3 +569,37 @@
         }
     }
 }
+
+// Blog New/Edit Form
+
+.blogs-newedit-container {
+    width: 100%;
+    height: 75vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .blogs-newedit-title {
+        font-size: 2em;
+        font-weight: 500;
+        color: $blog-blue;
+        margin-bottom: 1rem;
+    }
+
+    .blogs-newedit-link {
+        font-size: 1.2em;
+    }
+}
+
+.blog-form {
+    width: 40%;
+    padding: 2rem;
+
+    .blog-form-btn {
+        width: 30%;
+        border-radius: 3px;
+        background-color: $blog-dark-blue;
+        color: $white;
+    }
+}
