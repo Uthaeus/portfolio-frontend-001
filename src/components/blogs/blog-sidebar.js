@@ -19,7 +19,20 @@ function BlogSidebar({ user, categoryFilterHandler }) {
         setCategories([...categories, category]);
     }
 
-    
+    function categoryDeleteHandler(categoryId) {
+        fetch(`http://localhost:4000/categories/${categoryId}`, {
+            method: 'DELETE',
+            headers: {
+                'Authorization': `Bearer ${localStorage.getItem('token-001')}`
+            }
+        })
+        .then(res => res.json())
+        .then(data => console.log('successfully deleted category', data))
+        .catch(error => console.log('category delete error', error));
+
+        const newCategories = categories.filter(category => category.id !== categoryId);
+        setCategories(newCategories);
+    }
 
     return (
         <div className="blog-sidebar">
@@ -32,7 +45,7 @@ function BlogSidebar({ user, categoryFilterHandler }) {
 
             <ul className="blog-sidebar-categories">
 
-                {categories.map((category) => <BlogCategoryItem key={category.id} category={category} user={user} categoryFilterHandler={categoryFilterHandler} />)}
+                {categories.map((category) => <BlogCategoryItem key={category.id} category={category} user={user} categoryFilterHandler={categoryFilterHandler} categoryDeleteHandler={categoryDeleteHandler} />)}
             </ul>
 
             <h2 className="blog-sidebar-title">socials</h2>

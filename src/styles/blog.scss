@@ -108,7 +108,8 @@
         .category-wrapper {
             display: flex;
             justify-content: space-between;
-            padding-left: 1rem;
+            align-items: baseline;
+            padding-left: 0 0.5rem;
 
             .category-name {
                 font-size: 1.8em;
@@ -121,6 +122,12 @@
                     transform: scale(1.2);
                     color: $blog-dark-green;
                 }
+            }
+
+            .category-count {
+                font-size: 1.4em;
+                font-weight: 600;
+                color: $blog-dark-blue;
             }
 
             .category-delete {
