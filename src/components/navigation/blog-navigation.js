@@ -2,6 +2,7 @@ import { NavLink, Link } from "react-router-dom";
 import { useContext } from "react";
 
 import { UserContext } from "../../store/user-context";
+import BlogUserItem from "./blog-user-item";
 
 function BlogNavigation() {
     const { user, logoutUser } = useContext(UserContext);
@@ -26,7 +27,9 @@ function BlogNavigation() {
     return (
         <div className="blog-navigation">
             <div className="blog-navigation__head">
+                {/* border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; */}
 
+                {user ? <BlogUserItem user={user} /> : <p className="blog-head-welcome">Hi there</p>}
             </div>
 
             <div className="blog-navigation__links">

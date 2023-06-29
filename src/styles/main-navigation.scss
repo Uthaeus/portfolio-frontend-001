@@ -16,6 +16,8 @@
         .main-user-item {
             width: 90%;
             height: 21vh;
+            padding-top: 1rem;
+            padding-left: 1rem;
             position: relative;
             text-decoration: none;
             transition: all 0.3s ease-in-out;
@@ -26,9 +28,9 @@
             }
 
             .main-user-item-img {
-                width: 100%;
+                width: 60%;
                 height: 70%;
-                border-radius: 7px 7px 0 0;
+                border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
                 overflow: hidden;
             }
 
@@ -38,7 +40,7 @@
                 color: $light-blue;
                 position: absolute;
                 bottom: -0.6rem;
-                right: 0.4rem;
+                right: 1rem;
             }
         }
 

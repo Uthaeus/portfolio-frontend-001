@@ -5,7 +5,7 @@ function PortfolioCommentItem({ comment, user, removeCommentHandler }) {
     return (
         <div className="portfolio-comment-item">
             <div className="comment-avatar-wrapper">
-                <img src={defaultAvatar} alt="avatar" className="comment-avatar" width='92%' />
+                <img src={defaultAvatar} alt="avatar" className="comment-avatar" width='92%' height='84px' />
             </div>
 
             <div className="comment-body">

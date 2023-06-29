@@ -7,12 +7,59 @@
 @import 'pomodoro-clock';
 @import 'quote-machine';
 
+.portfolio-footer {
+    width: 100%;
+    height: 55px;
+    border-top: 1px solid $dark-grey;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    .footer-copyright {
+        font-weight: 600;
+        color: $black;
+    }
+
+    .footer-links {
+        width: 48%;
+        display: flex;
+        justify-content: flex-end;
+
+        .footer-link {
+            font-size: 1.2em;
+            font-weight: 600;
+            text-decoration: none;
+            text-align: center;
+            color: $white;
+            box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.3);
+            border-radius: 4px;
+            padding: 0 2rem;
+            margin: 0 2rem;
+            margin-bottom: 0.25rem;
+            transition: all 0.3s ease-in-out;
+
+            &:hover {
+                filter: brightness(1.2);
+                transform: scale(1.04);
+                box-shadow: 4px 4px 6px 0 rgba(0, 0, 0, 0.3);
+            }
+        }
+
+        .footer-home {
+            background-color: $dark-blue;
+        }
+
+        .footer-portfolio {
+            background-color: $brown;
+        }
+    }
+}
+
 .portfolio-layout {
     width: 100%;
     margin-top: -155px;
     min-height: calc(100vh + 175px);
     background-color: $green;
-    // color: $white;
     transition: all 0.4s ease-in-out;
 }
 
