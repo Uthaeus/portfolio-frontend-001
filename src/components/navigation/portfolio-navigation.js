@@ -81,7 +81,8 @@ function PortfolioNavigation() {
             </div>
 
             <div className="portfolio-navigation-foot">
-                <Link className="nav-title">{user ? user.username : "homerj's portfolio"}</Link>
+                <p className="nav-title">homerj's portfolio</p>
+
                 <p className="nav-toggle" onClick={navToggleHandler}>
                     {navOpen ? (
                         <i className="bi bi-caret-up-fill"></i>
