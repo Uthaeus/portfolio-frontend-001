@@ -2,7 +2,7 @@
 
 function Aboutpage() {
     return (
-        <div>
+        <div className="about-page-container">
             <h1>About page</h1>
         </div>
     )
