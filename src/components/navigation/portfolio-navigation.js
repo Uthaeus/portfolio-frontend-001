@@ -2,6 +2,7 @@ import { NavLink, Link } from "react-router-dom";
 import { useContext, useState } from "react";
 
 import { UserContext } from "../../store/user-context";
+import PortfolioUserItem from "./portfolio-user-item";
 
 function PortfolioNavigation() {
     const { user, logoutUser } = useContext(UserContext);
@@ -81,7 +82,7 @@ function PortfolioNavigation() {
             </div>
 
             <div className="portfolio-navigation-foot">
-                <p className="nav-title">homerj's portfolio</p>
+                {user ? <PortfolioUserItem user={user} /> : <p className="nav-title">homerj's portfolio</p>}
 
                 <p className="nav-toggle" onClick={navToggleHandler}>
                     {navOpen ? (
