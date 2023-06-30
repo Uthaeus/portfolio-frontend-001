@@ -38,7 +38,7 @@ function SkillForm({ addSkillHandler }) {
                 <input type='text' className="form-control" {...register('title', {required: true})} />
             </div>
 
-            <div className="row">
+            <div className="row mb-2">
                 <div className="col-md-4">
                     <div className="form-group">
                         <label htmlFor="percent_utilized">Percent Utilized</label>
