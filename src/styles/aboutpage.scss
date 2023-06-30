@@ -1,5 +1,41 @@
 
 .about-page-container {
     width: 100%;
-    
+
+}
+
+// Skill Item 
+
+.skill-item {
+    width: 80%;
+    display: flex;
+    margin: 0.5rem 0;
+
+    .skill-item-body {
+        width: 70%;
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+// Skill Form 
+
+.skill-form {
+    border: 1px solid #ccc;
+
+    .skill-form-btn {
+        font-size: 0.8em;
+        padding: 0 1rem;
+        border-radius: 3px;
+        background-color: $orange;
+        color: $white;
+        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+            background-color: $brown;
+            cursor: pointer;
+            transform: scale(1.04);
+        }
+    }
 }
