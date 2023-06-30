@@ -2,6 +2,7 @@
 .about-page-container {
     width: 100%;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 
@@ -10,17 +11,21 @@
         background-color: $white;
         color: $black;
         border-radius: 10px;
-        padding: 2rem;
+        padding: 1rem;
         display: flex;
 
         .about-page-image {
-            width: 30%;
+            width: 40%;
+            height: 100%;
+            border-radius: 4px;
+            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
         }
 
         .about-page-content {
-            width: 70%;
+            width: 60%;
 
             .about-page-title {
+                text-align: right;
                 font-size: 1.8em;
                 font-weight: 600;
                 color: $blue;
@@ -71,8 +76,19 @@
         width: 70%;
         padding: 1rem;
 
+        .add-skill-btn {
+            font-size: 0.8em;
+            color: $grey;
+            transition: all 0.3s ease-in-out;
+
+            &:hover {
+                color: $blue;
+                cursor: pointer;
+            }
+        }
+
         .about-page-skills-title {
-            font-size: 1.8em;
+            font-size: 1.3em;
             font-weight: 400;
             color: $tan;
             margin-bottom: 0.5rem;
@@ -97,13 +113,28 @@
         width: 70%;
         display: flex;
         flex-direction: column;
+
+        .skill-title {
+            font-size: 1.9em;
+            font-weight: 600;
+            color: $blue;
+        }
+
+        .skill-pct {
+            font-size: 1.2em;
+            font-weight: 400;
+            color: $dark-grey;
+        }
+    }
+
+    .skill-delete-btn {
+        color: $red;
     }
 }
 
 // Skill Form 
 
 .skill-form {
-    border: 1px solid #ccc;
     width: 50%;
     padding: 1rem;
 

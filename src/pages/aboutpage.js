@@ -1,7 +1,7 @@
 import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";   
 
-import mainImage from "../assets/images/login.jpg";
+import mainImage from "../assets/images/about-img.jpg";
 
 import { UserContext } from "../store/user-context";
 import SkillForm from "../components/skills/skill-form";
@@ -31,7 +31,7 @@ function Aboutpage() {
         <div className="about-page-container">
             <div className="about-page-body">
                 <div className="about-page-image" style={{
-                    backgroundImage: mainImage,
+                    backgroundImage: `url(${mainImage})`,
                     backgroundSize: 'cover',
                     backgroundPosition: 'center',
                     backgroundRepeat: 'no-repeat'
@@ -59,11 +59,11 @@ function Aboutpage() {
             
             <div className="about-page-skills-wrapper">
 
-                {user?.role === 'site_admin' && <p className="add-skill-btn" onClick={() => setShowSkillForm(prev => !prev)}>add new skill</p>}
+                {user?.role === 'site_admin' && <p className="add-skill-btn" onClick={() => setShowSkillForm(prev => !prev)}>{showSkillForm ? 'close form' : 'add new skill'}</p>}
 
                 {showSkillForm && <SkillForm addSkillHandler={addSkillHandler} />}
 
-                <p className="about-page-skills-title">an approximation of where i'm putting my time currently</p>
+                <p className="about-page-skills-title">an approximation of where i'm currently putting my time</p>
 
                 <div className="about-page-skills">
                     {skills.map(skill => <SkillItem key={skill.id} skill={skill} user={user} removeSkillHandler={removeSkillHandler} />)}
