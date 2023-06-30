@@ -23,6 +23,10 @@ function Aboutpage() {
         setSkills(prevSkills => [...prevSkills, skill])
     }
 
+    function removeSkillHandler(id) {
+        setSkills(prevSkills => prevSkills.filter(skill => skill.id !== id));
+    }
+
     return (
         <div className="about-page-container">
             <div className="about-page-body">
@@ -59,8 +63,10 @@ function Aboutpage() {
 
                 {showSkillForm && <SkillForm addSkillHandler={addSkillHandler} />}
 
+                <p className="about-page-skills-title">an approximation of where i'm putting my time currently</p>
+
                 <div className="about-page-skills">
-                    {skills.map(skill => <SkillItem key={skill.id} skill={skill} user={user} />)}
+                    {skills.map(skill => <SkillItem key={skill.id} skill={skill} user={user} removeSkillHandler={removeSkillHandler} />)}
                 </div>
 
             </div>
