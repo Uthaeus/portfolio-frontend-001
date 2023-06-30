@@ -3,26 +3,29 @@
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
 
     .about-page-body {
         width: 70%;
-        background-color: $white;
+        margin-top: 4rem;
+        background-color: $brown;
         color: $black;
         border-radius: 10px;
-        padding: 1rem;
         display: flex;
 
-        .about-page-image {
+        .about-page-image-wrapper {
             width: 40%;
-            height: 100%;
-            border-radius: 4px;
-            box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+            padding: 1rem;
+
+            .about-page-image {
+                border-radius: 4px;
+
+            }
         }
 
         .about-page-content {
             width: 60%;
+            padding: 1rem;
 
             .about-page-title {
                 text-align: right;
@@ -51,12 +54,11 @@
             .about-page-content-actions {
                 width: 80%;
                 margin: 1rem auto;
-                padding: 0 1rem;
                 display: flex;
                 justify-content: space-between;
 
                 .content-btn {
-                    width: 30%;
+                    width: 31%;
                     font-size: 0.9em;
                     border-radius: 3px;
                     box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
@@ -69,6 +71,64 @@
                     }
                 }
             }
+        }
+    }
+
+    .about-page-dropdowns {
+        width: 70%;
+        margin: 0.5rem 0;
+        overflow: hidden;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+
+        .projects-dropdown {
+            width: 50%;
+            padding: 0.2rem 0.5rem;
+            border-radius: 5px;
+            background-color: $grey;
+            transform: translateY(-400px);
+            transition: all 0.5s ease-in-out;
+
+            .project-item {
+                width: 94%;
+                margin: 0.15rem auto;
+                padding: 0.2rem 0.5rem;
+                background-color: $white;
+                color: #121212;
+                border-radius: 3px;
+                border: 1px solid $dark-grey;
+                text-align: right;
+            }
+        }
+
+        .socials-dropdown {
+            width: 40%;
+            padding: 0.2rem 0;
+            display: flex;
+            justify-content: space-evenly;
+            border: 1px solid $dark-grey;
+            border-radius: 3px;
+            background-color: $white;
+            transform: translateY(-400px);
+            transition: all 0.5s ease-in-out;
+            
+            .socials-item {
+                font-size: 1.6em;
+                color: $dark-grey;
+                transition: all 0.3s ease-in-out;
+                text-decoration: none;
+
+                &:hover {
+                    color: $green;
+                    cursor: pointer;
+                    transform: scale(1.1);
+                }
+            }
+        }
+
+        .show-dropdown {
+            transform: translateY(0);
         }
     }
 

@@ -61,7 +61,7 @@ function BlogDetail() {
                             <Link to="/blogs" className="blog-detail-back">{'<< blogs'}</Link> /
                             <p className="detail-widget-item">{blog.id}</p> /
                             <p className="detail-widget-item">{blog.title}</p> /
-                            <Link to={`/blogs/${id}`} className="blog-detail-category">{blog.category?.name}</Link>
+                            <p className="blog-detail-category">{blog.category?.name}</p>
                         </div>
 
                         <div className="detail-widgets-right">

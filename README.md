@@ -9,4 +9,3 @@
 - addresses for social links
 - why is portfolio form cutting off first letter of first tech?
 - add footer to portfolio
-- check links in blog detail widget
