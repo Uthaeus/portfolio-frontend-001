@@ -1,12 +1,10 @@
 import { useForm } from "react-hook-form";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useNavigate } from "react-router";
 
 function PortfolioForm({ portfolio }) {
     const { register, handleSubmit, formState: { errors }, reset } = useForm();
     const navigate = useNavigate();
-    const [currentTech, setCurrentTech] = useState('');
-    const [technologies, setTechnologies] = useState([]);
 
     useEffect(() => {
         if (portfolio) {
@@ -14,26 +12,12 @@ function PortfolioForm({ portfolio }) {
         }
     }, [portfolio, reset]);
 
-    function addTechHandler() {
-        setTechnologies([...technologies, currentTech]);
-        setCurrentTech('');
-    }
-
-    function removeTechHandler(tech) {
-        setTechnologies(technologies.filter(t => t !== tech));
-    }
-
-    function techChangeHandler(e) {
-        setCurrentTech(e.target.value);
-    }
-
     function buildForm(data) {
         const formData = new FormData();
 
         formData.append('portfolio_item[title]', data.title);
         formData.append('portfolio_item[description]', data.description);
         formData.append('portfolio_item[url]', data.url);
-        formData.append('portfolio_item[technologies]', technologies.join(', '));
         formData.append('portfolio_item[image]', data.image[0]);
 
         return formData;
@@ -86,25 +70,7 @@ function PortfolioForm({ portfolio }) {
                 {errors.image && <span className="text-danger">Image is required</span>}
             </div>
 
-            <div className="row mb-2">
-                <div className="col-md-6">
-                    <div className="form-group mb-2">
-                        <label htmlFor="technologies">Technologies</label>
-                        <input type="text" className="form-control" value={currentTech} onChange={techChangeHandler} />
-                        <p className="add-tech-link" onClick={addTechHandler}>add</p>
-                    </div>
-
-                    <button type="submit" className="portfolio-form-btn">{portfolio ? 'Update' : 'Save'}</button>
-                </div>
-                <div className="col-md-6">
-                    <p className="tech-title">technologies used:</p>
-                    <ul className="list-group">
-                        {technologies.map((tech, i) => <li key={i} className="tech-item" onClick={() => removeTechHandler(tech)}>{tech}</li>)}
-                    </ul>
-                </div>
-            </div>
-
-            
+            <button type="submit" className="portfolio-form-btn mt-3">{portfolio ? 'Update' : 'Save'}</button>
         </form>
     );
 }

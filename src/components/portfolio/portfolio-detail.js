@@ -72,6 +72,8 @@ function PortfolioDetail() {
             component = <DefaultComponent />;
     }
 
+    console.log('portfolio', portfolio);
+
     return (
         <div className="portfolio-detail">
             <div className="portfolio-detail-left">
