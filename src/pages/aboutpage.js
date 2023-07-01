@@ -6,7 +6,6 @@ import mainImage from "../assets/images/about-img.jpg";
 import { UserContext } from "../store/user-context";
 import SkillForm from "../components/skills/skill-form";
 import SkillItem from "../components/skills/skill-item";
-import { set } from "react-hook-form";
 
 function Aboutpage() {
     const { user } = useContext(UserContext);
