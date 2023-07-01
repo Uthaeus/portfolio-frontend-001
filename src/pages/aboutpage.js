@@ -34,6 +34,8 @@ function Aboutpage() {
             <div className="about-page-body">
                 <div className="about-page-image-wrapper">
                     <img className="about-page-image" src={mainImage} alt="about page" width='100%' />
+
+                    <button onClick={() => navigate('/contact')} className="contact-btn">Contact Me</button>
                 </div>
 
                 <div className="about-page-content">
@@ -48,41 +50,10 @@ function Aboutpage() {
                         </p>
                     </div>
 
-                    <button onClick={() => navigate('/contact')} className="contact-btn">Contact Me</button>
+                    
                 </div>
             </div>
 
-            <div className="about-page-dropdowns">
-                <div className="projects-dropdown">
-                    <p className="project-item">project 1</p>
-                    <p className="project-item">project 2</p>
-                    <p className="project-item">project 3</p>
-                    <p className="project-item">project 4</p>
-                    <p className="project-item">project 5</p>
-                </div>
-
-                <div className="socials-dropdown">
-                    <a className="socials-item" href='https://www.facebook.com/' target='_blank' rel="noreferrer">
-                        <i className="bi bi-facebook"></i>
-                    </a>
-
-                    <a className="socials-item" href='https://www.instagram.com/' target='_blank' rel="noreferrer">
-                        <i className="bi bi-instagram"></i>
-                    </a>
-
-                    <a className="socials-item" href='https://twitter.com/' target='_blank' rel="noreferrer">
-                        <i className="bi bi-twitter"></i>
-                    </a>
-
-                    <a className="socials-item" href='https://www.linkedin.com/' target='_blank' rel="noreferrer">
-                        <i className="bi bi-linkedin"></i>
-                    </a>
-
-                    <a className="socials-item" href='https://www.github.com/' target='_blank' rel="noreferrer">
-                        <i className="bi bi-github"></i>
-                    </a>
-                </div>
-            </div>
             
             <div className="about-page-skills-wrapper">
 
