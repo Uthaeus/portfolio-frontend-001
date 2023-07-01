@@ -1,6 +1,6 @@
 import defaultImage from '../../assets/images/giants-thumb.png';
 
-function TechItem({ technology, removeTechHandler }) {
+function TechItem({ technology, removeTechHandler, user }) {
     let imageUrl = technology.image?.url ? `http://localhost:4000${technology.image.url}` : defaultImage;
 
     function deleteHandler() {
@@ -38,7 +38,7 @@ function TechItem({ technology, removeTechHandler }) {
                 </div>
             </div>
 
-            <p className="detail-technology-delete-btn" onClick={deleteHandler}>X</p>
+            {user?.role === 'site_admin' && <p className="detail-technology-delete-btn" onClick={deleteHandler}>X</p>}
         </div>
     );
 }

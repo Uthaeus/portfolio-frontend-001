@@ -1,5 +1,5 @@
 import { useState, useEffect, useContext } from "react";
-import { useParams } from "react-router";
+import { useParams, useNavigate } from "react-router";
 import { Link } from "react-router-dom";
 
 import { UserContext } from "../../store/user-context";
@@ -23,6 +23,7 @@ function PortfolioDetail() {
     const [showTechForm, setShowTechForm] = useState(false);
     const { id } = useParams();
     const { user } = useContext(UserContext);
+    const navigate = useNavigate();
     let component;
 
     useEffect(() => {
@@ -78,6 +79,21 @@ function PortfolioDetail() {
             component = <DefaultComponent />;
     }
 
+    function deleteHandler() {
+        fetch(`http://localhost:4000/portfolio_items/${id}`, {
+            method: 'DELETE',
+            headers: {
+                'Authorization': `Bearer ${localStorage.getItem('token-001')}`
+            }
+        })
+        .then(response => {
+            if (response.ok) {
+                navigate('/portfolio');
+            }
+        })
+        .catch(error => console.log('portfolio delete error', error));
+    }
+
     function addTechHandler(tech) {
         setTechnologies([tech, ...technologies]);
     }
@@ -91,42 +107,49 @@ function PortfolioDetail() {
             <div className="portfolio-detail-left">
                 <div className="portfolio-detail-header">
                     <div className="portfolio-detail-header-left">
+
+                        <img src={`http://localhost:4000/${portfolio.image.url}`} alt="portfolio thumbnail" className="portfolio-detail-image" width='100%' />
+                        
+                    </div>
+
+                    <div className="portfolio-detail-header-right">
                         <h2 className="portfolio-detail-title">{portfolio.title}</h2>
 
                         {portfolio.url && <a href={portfolio.url} target="_blank" rel='noreferrer' className='detail-item-link'>{portfolio.url}</a>}
                     </div>
-
-                    <div className="portfolio-detail-actions">
-                        {user?.role === 'site_admin' && (
-                            <>
-                                <Link to={`/portfolio/${portfolio.id}/edit`} className="portfolio-detail-action edit-action">Edit</Link>
-                                <Link to={`/portfolio/${portfolio.id}/delete`} className="portfolio-detail-action delete-action">Delete</Link>
-                            </>
-                        )}
-
-                        <Link to='/portfolio' className="portfolio-detail-action back-action">Back</Link>
-                    </div>
+                    
                 </div>
 
                 <div className="portfolio-detail-body">
                     <div className="portfolio-detail-body-left">
-                        <div className="portfolio-detail-description-wrapper">
-                            <p className="portfolio-detail-description">{portfolio.description}</p>
-                        </div>
+                        
 
-                        {user?.role === 'site_admin' && <p className="detail-add-tech-link" onClick={() => setShowTechForm(prev => !prev)}>add technology</p>}
+                        {user?.role === 'site_admin' && <p className="detail-add-tech-link" onClick={() => setShowTechForm(prev => !prev)}>{showTechForm ? 'close' : 'add technology'}</p>}
 
                         {showTechForm && <TechForm portfolioId={portfolio.id} addTechHandler={addTechHandler} />}
 
                         <p className="detail-technology-title">technologies used:</p>
 
                         <div className="detail-technologies-wrapper">
-                            {technologies.map((technology) => <TechItem key={technology.id} technology={technology} removeTechHandler={removeTechHandler} />)}
+                            {technologies.map((technology) => <TechItem key={technology.id} technology={technology} removeTechHandler={removeTechHandler} user={user} />)}
                         </div>
                     </div>
 
                     <div className="portfolio-detail-body-right">
-                        <img src={`http://localhost:4000/${portfolio.image.url}`} alt="portfolio thumbnail" className="portfolio-detail-image" width='100%' />
+                        <div className="portfolio-detail-description-wrapper">
+                            <p className="portfolio-detail-description">{portfolio.description}</p>
+                        </div>
+
+                        <div className="portfolio-detail-actions">
+                            {user?.role === 'site_admin' && (
+                                <>
+                                    <Link to={`/portfolio/${portfolio.id}/edit`} className="portfolio-detail-action edit-action">Edit</Link>
+                                    <p onClick={deleteHandler} className="portfolio-detail-action delete-action">Delete</p>
+                                </>
+                            )}
+
+                            <Link to='/portfolio' className="portfolio-detail-action back-action">Back</Link>
+                        </div>
                     </div>
                 </div>
 

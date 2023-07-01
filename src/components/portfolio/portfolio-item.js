@@ -4,6 +4,7 @@ function PortfolioItem({ portfolio, user, removeItemHandler }) {
     let image = `http://localhost:4000${portfolio.image.url}`;
 
     function itemDeleteHandler() {
+        removeItemHandler(portfolio.id);
         fetch(`http://localhost:4000/portfolio_items/${portfolio.id}`, {
             method: 'DELETE',
             headers: {
@@ -12,11 +13,10 @@ function PortfolioItem({ portfolio, user, removeItemHandler }) {
         })
         .then(response => {
             if (response.ok) {
-                removeItemHandler(portfolio.id);
-                return response.json();
+                console.log('portfolioitem delete success');
             }
         })
-        .catch(error => console.log('portfolio delete error', error));
+        .catch(error => console.log('portfolioitem delete error', error));
     }
 
     return (

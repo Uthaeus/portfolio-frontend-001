@@ -81,68 +81,40 @@
             width: 100%;
             padding: 1rem;
             margin: 1rem auto;
-            background-color: $tan;
+            background-color: $blue;
             border-radius: 4px;
             box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.2);
+            display: flex;
             position: relative;
 
-            .portfolio-detail-title {
-                margin: 1rem;
-                font-size: 2.8rem;
-                font-weight: 700;
-                color: $dark-blue;
+            .portfolio-detail-header-left {
+                width: 15%;
+            }
+
+            .portfolio-detail-header-right {
+                padding-top: 1rem;
+                width: 85%;
+
+                .portfolio-detail-title {
+                    font-size: 2.5rem;
+                    font-weight: 600;
+                    color: $black;
+                    margin-left: 10%;
+                }
             }
 
             .detail-item-link {
-                font-size: 1.2em;
+                font-size: 1.2rem;
                 font-weight: 400;
-                color: $blue;
-                margin-left: 2rem;
+                color: $metallic-silver;
                 transition: all 0.3s ease-in-out;
+                position: absolute;
+                bottom: 0;
+                right: 0.5rem;
 
                 &:hover {
-                    color: blue;
-                    transform: scale(1.2);
-                }
-            }
-
-            .portfolio-detail-actions {
-                display: flex;
-                position: absolute;
-                bottom: 0.5rem;
-                right: 0;
-
-                .portfolio-detail-action {
-                    width: 100px;
-                    text-decoration: none;
-                    text-align: center;
-                    border: none;
-                    border-radius: 3px;
-                    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.297);
-                    font-size: 1.2rem;
-                    font-weight: 400;
-                    color: $light-grey;
-                    margin: 0 0.5rem;
-                    padding: 2px 0;
-                    transition: all 0.3s ease-in-out;
-
-                    &:hover {
-                        filter: brightness(1.2);
-                        transform: scale(1.04);
-                        box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.292);
-                    }
-                }
-
-                .edit-action {
-                    background-color: $green;
-                }
-
-                .delete-action {
-                    background-color: $red;
-                }
-
-                .back-action {
-                    background-color: $dark-blue1;
+                    filter: brightness(1.2);
+                    transform: scale(1.04);
                 }
             }
         }
@@ -156,24 +128,10 @@
                 width: 90%;
                 margin: 0.5rem auto;
 
-                .portfolio-detail-description-wrapper {
-                    width: 100%;
-                    min-height: 200px;
-                    padding: 0.5rem 1rem;
-                    margin: 1rem 0;
-                    border-bottom: 1px solid $dark-grey;
-
-                    .portfolio-detail-description {
-                        font-size: 1.2rem;
-                        font-weight: 400;
-                        color: #161616;
-                    }
-                }
-
                 .detail-add-tech-link {
                     font-size: 0.8em;
                     font-weight: 400;
-                    color: $blue;
+                    color: $licorice;
                     transition: all 0.3s ease-in-out;
 
                     &:hover {
@@ -190,7 +148,7 @@
                 }
 
                 .tech-form {
-                    width: 50%;
+                    width: 100%;
 
                     .tech-form-btn {
                         font-size: 0.8em;
@@ -216,10 +174,11 @@
                         width: 100%;
                         margin: 0.5rem 0;
                         display: flex;
+                        align-items: center;
                         position: relative;
 
                         .detail-technology-image-wrapper {
-                            width: 30%;
+                            width: 20%;
 
                             .detail-technology-image {
                                 border-radius: 3px;
@@ -228,7 +187,7 @@
                         }
 
                         .detail-technology-content {
-                            width: 70%;
+                            width: 80%;
 
                             .detail-technology-name {
                                 font-size: 1.2rem;
@@ -259,9 +218,59 @@
                 width: 100%;
                 margin-top: 1rem;
 
-                .portfolio-detail-image {
-                    border-radius: 3px;
-                    box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+                .portfolio-detail-description-wrapper {
+                    width: 100%;
+                    min-height: 150px;
+                    padding: 0.5rem 1rem;
+                    margin: 1rem 0;
+                    border-bottom: 1px solid $dark-grey;
+
+                    .portfolio-detail-description {
+                        font-size: 1.2rem;
+                        font-weight: 400;
+                        color: #161616;
+                        word-break: break-all;
+                    }
+                }
+
+                .portfolio-detail-actions {
+                    display: flex;
+                    justify-content: flex-end;
+                    margin-bottom: 1.4rem;
+    
+                    .portfolio-detail-action {
+                        width: 100px;
+                        text-decoration: none;
+                        text-align: center;
+                        border: none;
+                        border-radius: 3px;
+                        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.297);
+                        font-size: 1.2rem;
+                        font-weight: 400;
+                        color: $light-grey;
+                        margin: 0 0.5rem;
+                        padding: 2px 0;
+                        transition: all 0.3s ease-in-out;
+    
+                        &:hover {
+                            cursor: pointer;
+                            filter: brightness(1.2);
+                            transform: scale(1.04);
+                            box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.292);
+                        }
+                    }
+    
+                    .edit-action {
+                        background-color: $green;
+                    }
+    
+                    .delete-action {
+                        background-color: $red;
+                    }
+    
+                    .back-action {
+                        background-color: $dark-blue1;
+                    }
                 }
             }
         }

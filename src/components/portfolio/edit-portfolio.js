@@ -14,8 +14,6 @@ function EditPortfolio() {
         .catch(error => console.log('edit page', error));
     }, [id]);
 
-    console.log('edit page', portfolio);
-
     return (
         <div className="portfolio-newedit">
             <h1 className="portfolio-newedit-title">Edit Portfolio</h1>
