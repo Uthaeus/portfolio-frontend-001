@@ -12,8 +12,6 @@ function Aboutpage() {
     const { user } = useContext(UserContext);
     const [skills, setSkills] = useState([]);
     const [showSkillForm, setShowSkillForm] = useState(false);
-    const [showSocials, setShowSocials] = useState(false);
-    const [showProjects, setShowProjects] = useState(false);
     const navigate = useNavigate();
 
     useEffect(() => {
@@ -29,28 +27,6 @@ function Aboutpage() {
 
     function removeSkillHandler(id) {
         setSkills(prevSkills => prevSkills.filter(skill => skill.id !== id));
-    }
-
-    function socialsToggleHandler() {
-        let socialsDropdown = document.querySelector('.socials-dropdown');
-        
-        if (showSocials) {
-            socialsDropdown.classList.remove('show-dropdown');
-        } else {
-            socialsDropdown.classList.add('show-dropdown');
-        }
-        setShowSocials(prev => !prev);
-    }
-
-    function projectsToggleHandler() {
-        let projectsDropdown = document.querySelector('.projects-dropdown');
-
-        if (showProjects) {
-            projectsDropdown.classList.remove('show-dropdown');
-        } else {
-            projectsDropdown.classList.add('show-dropdown');
-        }
-        setShowProjects(prev => !prev);
     }
 
     return (
@@ -72,11 +48,7 @@ function Aboutpage() {
                         </p>
                     </div>
 
-                    <div className="about-page-content-actions">
-                        <button onClick={() => navigate('/contact')} className="content-btn contact-btn">Contact Me</button>
-                        <button onClick={socialsToggleHandler} className="content-btn socials-btn">Socials</button>
-                        <button onClick={projectsToggleHandler} className="content-btn projects-btn">Projects</button>
-                    </div>
+                    <button onClick={() => navigate('/contact')} className="contact-btn">Contact Me</button>
                 </div>
             </div>
 
