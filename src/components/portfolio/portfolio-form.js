@@ -18,7 +18,10 @@ function PortfolioForm({ portfolio }) {
         formData.append('portfolio_item[title]', data.title);
         formData.append('portfolio_item[description]', data.description);
         formData.append('portfolio_item[url]', data.url);
-        formData.append('portfolio_item[image]', data.image[0]);
+
+        if (data.image[0]) {
+            formData.append('portfolio_item[image]', data.image[0]);
+        }
 
         return formData;
     }

@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import { UserContext } from "../../store/user-context";
 import PortfolioCommentForm from "./portfolio-comment-form";
 import PortfolioCommentItem from "./portfolio-comment-item";
+import TechItem from "./tech-item";
+import TechForm from "./tech-form";
 
 import Calculator from "../projects/calculator/calculator";
 import DrumMachine from "../projects/drum-machine/drum-machine";
@@ -12,10 +14,13 @@ import MarkdownPreviewer from "../projects/markdown/markdown";
 import PomodoroClock from "../projects/pomodoro/pomodoro-clock";
 import QuoteGenerator from "../projects/quote-generator/quote-machine";
 import DefaultComponent from "../projects/default-component";
+import { set } from "react-hook-form";
 
 function PortfolioDetail() {
     const [portfolio, setPortfolio] = useState(null);
     const [comments, setComments] = useState([]);
+    const [technologies, setTechnologies] = useState([]);
+    const [showTechForm, setShowTechForm] = useState(false);
     const { id } = useParams();
     const { user } = useContext(UserContext);
     let component;
@@ -26,6 +31,7 @@ function PortfolioDetail() {
             .then(data => {
                 setPortfolio(data);
                 setComments(data.portfolio_comments);
+                setTechnologies(data.technologies);
             })
             .catch(error => console.log('portfolio error', error));
     }, [id]);
@@ -72,6 +78,14 @@ function PortfolioDetail() {
             component = <DefaultComponent />;
     }
 
+    function addTechHandler(tech) {
+        setTechnologies([tech, ...technologies]);
+    }
+
+    function removeTechHandler(id) {
+        setTechnologies(technologies.filter(tech => tech.id !== id));
+    }
+
     console.log('portfolio', portfolio);
 
     return (
@@ -102,10 +116,14 @@ function PortfolioDetail() {
                             <p className="portfolio-detail-description">{portfolio.description}</p>
                         </div>
 
+                        {user?.role === 'site_admin' && <p className="detail-add-tech-link" onClick={() => setShowTechForm(prev => !prev)}>add technology</p>}
+
+                        {showTechForm && <TechForm portfolioId={portfolio.id} addTechHandler={addTechHandler} />}
+
                         <p className="detail-technology-title">technologies used:</p>
 
                         <div className="detail-technology-wrapper">
-                            {portfolio.technologies.map((technology, index) => <div key={index} className="detail-technology-item">{technology}</div>)}
+                            {technologies.map((technology) => <TechItem key={technology.id} technology={technology} removeTechHandler={removeTechHandler} />)}
                         </div>
                     </div>
 

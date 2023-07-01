@@ -170,22 +170,87 @@
                     }
                 }
 
+                .detail-add-tech-link {
+                    font-size: 0.8em;
+                    font-weight: 400;
+                    color: $blue;
+                    transition: all 0.3s ease-in-out;
+
+                    &:hover {
+                        color: $metallic-bronze;
+                        transform: scale(1.2);
+                    }
+                }
+
                 .detail-technology-title {
                     font-weight: 700;
                     color: $black;
                     padding-bottom: 0.5rem;
                 }
 
+                .tech-form {
+                    width: 50%;
+
+                    .tech-form-btn {
+                        font-size: 0.8em;
+                        padding: 0 2rem;
+                        border-radius: 3px;
+                        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.297);
+                        background-color: $metallic-silver;
+                        color: $black;
+                        transition: all 0.3s ease-in-out;
+
+                        &:hover {
+                            filter: brightness(1.2);
+                            transform: scale(1.04);
+                            box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.292);
+                        }
+                    }
+                }
+
                 .detail-technology-wrapper {
-                    width: 70%;
-                    margin: 0.5rem auto;
+                    width: 100%;
                     display: grid;
-                    grid-template-columns: repeat(2, 1fr);
+                    grid-template-columns: repeat(3, 1fr);
 
                     .detail-technology-item {
-                        font-size: 1.2rem;
-                        font-weight: 400;
-                        color: $light-grey;
+                        width: 100%;
+                        margin: 0.5rem 0;
+                        display: flex;
+                        position: relative;
+
+                        .detail-technology-image-wrapper {
+                            width: 30%;
+
+                            .detail-technology-image {
+                                border-radius: 3px;
+                                box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
+                            }
+                        }
+
+                        .detail-technology-content {
+                            width: 70%;
+
+                            .detail-technology-name {
+                                font-size: 1.2rem;
+                                font-weight: 400;
+                                color: $metallic-yellow;
+                            }
+                        }
+
+                        .detail-technology-delete-btn {
+                            font-size: 1.1em;
+                            position: absolute;
+                            top: 0;
+                            right: 0;
+                            color: $red;
+                            transition: all 0.3s ease-in-out;
+
+                            &:hover {
+                                color: $metallic-bronze;
+                                transform: scale(1.2);
+                            }
+                        }
                     }
                 }
             }
