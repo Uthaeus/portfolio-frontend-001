@@ -1,5 +1,6 @@
 import { useContext, useEffect, useState } from "react";
-import { Link } from "react-router-dom";   
+import { Link } from "react-router-dom";  
+import { useNavigate } from "react-router-dom"; 
 
 import mainImage from "../assets/images/about-img.jpg";
 
@@ -13,6 +14,7 @@ function Aboutpage() {
     const [showSkillForm, setShowSkillForm] = useState(false);
     const [showSocials, setShowSocials] = useState(false);
     const [showProjects, setShowProjects] = useState(false);
+    const navigate = useNavigate();
 
     useEffect(() => {
         fetch('http://localhost:4000/skills')
@@ -71,7 +73,7 @@ function Aboutpage() {
                     </div>
 
                     <div className="about-page-content-actions">
-                        <button className="content-btn contact-btn">Contact Me</button>
+                        <button onClick={() => navigate('/contact')} className="content-btn contact-btn">Contact Me</button>
                         <button onClick={socialsToggleHandler} className="content-btn socials-btn">Socials</button>
                         <button onClick={projectsToggleHandler} className="content-btn projects-btn">Projects</button>
                     </div>
