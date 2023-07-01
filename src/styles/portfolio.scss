@@ -177,8 +177,9 @@
                     transition: all 0.3s ease-in-out;
 
                     &:hover {
+                        cursor: pointer;
                         color: $metallic-bronze;
-                        transform: scale(1.2);
+                        transform: scale(1.04);
                     }
                 }
 
@@ -208,10 +209,8 @@
                     }
                 }
 
-                .detail-technology-wrapper {
+                .detail-technologies-wrapper {
                     width: 100%;
-                    display: grid;
-                    grid-template-columns: repeat(3, 1fr);
 
                     .detail-technology-item {
                         width: 100%;
@@ -247,6 +246,7 @@
                             transition: all 0.3s ease-in-out;
 
                             &:hover {
+                                cursor: pointer;
                                 color: $metallic-bronze;
                                 transform: scale(1.2);
                             }

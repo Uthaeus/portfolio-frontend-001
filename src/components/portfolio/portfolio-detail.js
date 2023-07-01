@@ -86,8 +86,6 @@ function PortfolioDetail() {
         setTechnologies(technologies.filter(tech => tech.id !== id));
     }
 
-    console.log('portfolio', portfolio);
-
     return (
         <div className="portfolio-detail">
             <div className="portfolio-detail-left">
@@ -122,7 +120,7 @@ function PortfolioDetail() {
 
                         <p className="detail-technology-title">technologies used:</p>
 
-                        <div className="detail-technology-wrapper">
+                        <div className="detail-technologies-wrapper">
                             {technologies.map((technology) => <TechItem key={technology.id} technology={technology} removeTechHandler={removeTechHandler} />)}
                         </div>
                     </div>

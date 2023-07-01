@@ -8,7 +8,7 @@ function TechForm({ portfolioId, addTechHandler }) {
 
         formData.append('technology[name]', data.name);
         formData.append('technology[percent_utilized]', data.percent_utilized);
-        formData.append('technology[portfolio_id]', portfolioId);
+        formData.append('technology[portfolio_item_id]', portfolioId);
 
         if (data.image[0]) {
             formData.append('technology[image]', data.image[0]);
@@ -27,7 +27,6 @@ function TechForm({ portfolioId, addTechHandler }) {
         })
         .then(response => response.json())
         .then(data => {
-            console.log('create tech data', data);
             addTechHandler(data);
             reset();
         })
