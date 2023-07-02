@@ -109,8 +109,8 @@
                 color: $metallic-silver;
                 transition: all 0.3s ease-in-out;
                 position: absolute;
-                bottom: 0;
-                right: 0.5rem;
+                bottom: 0.5;
+                right: 0.75rem;
 
                 &:hover {
                     filter: brightness(1.2);
