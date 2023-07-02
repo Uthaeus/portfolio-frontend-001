@@ -1,10 +1,12 @@
 import { useContext, useState } from "react";
+import { useNavigate } from "react-router";
 
 import { UserContext } from "../store/user-context";
 
 function Homepage() {   
     const { user } = useContext(UserContext);
     const [showProjects, setShowProjects] = useState(false);
+    const navigate = useNavigate();
 
     function showProjectsHandler() {
         let element = document.querySelector('.homepage-projects-wrapper');
@@ -27,8 +29,8 @@ function Homepage() {
                 <p className="homepage-author">- Duke Ellington</p>
 
                 <div className="homepage-links">
-                    <button className="homepage-link about">About</button>
-                    <button className="homepage-link contact">Contact</button>
+                    <button onClick={() => navigate('/about')} className="homepage-link about">About</button>
+                    <button onClick={() => navigate('/contact')} className="homepage-link contact">Contact</button>
                     <button onClick={showProjectsHandler} className="homepage-link projects">Projects</button>
                 </div>
 

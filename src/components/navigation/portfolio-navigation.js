@@ -82,7 +82,7 @@ function PortfolioNavigation() {
             </div>
 
             <div className="portfolio-navigation-foot">
-                {user ? <PortfolioUserItem user={user} /> : <p className="nav-title">homerj's portfolio</p>}
+                {user ? <PortfolioUserItem user={user} /> : <Link to='/sign-up' className="nav-title">homerj's portfolio</Link>}
 
                 <p className="nav-toggle" onClick={navToggleHandler}>
                     {navOpen ? (
