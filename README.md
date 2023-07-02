@@ -4,6 +4,8 @@
 - add footer to blogs
 - refactor user items for navs
 - userpage
+
+
 - addresses for social links
-- add footer to portfolio
-- pull technology form out of portfolio form put in portfolio detail
+- pomodoro clock is not finished
+- need to refactor markdown into rows
