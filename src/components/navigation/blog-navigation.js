@@ -29,7 +29,7 @@ function BlogNavigation() {
             <div className="blog-navigation__head">
                 {/* border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; */}
 
-                {user ? <BlogUserItem user={user} /> : <p className="blog-head-welcome">Hi there</p>}
+                {user ? <BlogUserItem user={user} /> : <Link to='/sign-up' className="blog-head-welcome">Hi there</Link>}
             </div>
 
             <div className="blog-navigation__links">

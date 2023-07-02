@@ -54,7 +54,7 @@ function Blogs() {
                 </div>
             </div>
 
-            {user && <Link to="/blogs/new" className="new-blog-link">New Blog</Link>}
+            {user?.role === 'site_admin' && <Link to="/blogs/new" className="new-blog-link">New Blog</Link>}
 
             <div className="blogs-body">
 

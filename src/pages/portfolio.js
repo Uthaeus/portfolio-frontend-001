@@ -30,7 +30,7 @@ function Portfolio() {
                     <p className="header-author">-Thomas A. Edison</p>
                 </div>
 
-                {user && <Link to="/portfolio/new" className="new-portfolio-link">New Portfolio</Link>}
+                {user?.role === 'site_admin' && <Link to="/portfolio/new" className="new-portfolio-link">New Portfolio</Link>}
             </div>
 
             <div className="portfolio-items">
