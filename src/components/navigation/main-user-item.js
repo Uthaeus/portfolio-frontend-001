@@ -6,7 +6,7 @@ function MainUserItem({ user }) {
     let imageUrl = user.avatar?.url ? `http://localhost:4000${user.avatar.url}` : image;
 
   return (
-    <Link to='/userpage' className="main-user-item">
+    <div className="main-user-item">
       <div className="main-user-item-img" style={{
         backgroundImage: `url(${imageUrl})`,
         backgroundPosition: 'center',
@@ -14,8 +14,8 @@ function MainUserItem({ user }) {
         backgroundRepeat: 'no-repeat'
       }} />
 
-      <p className="main-user-item-username">{user.username}</p>
-    </Link>
+      <Link to='/userpage' className="main-user-item-username">{user.username}</Link>
+    </div>
   )
 }
 

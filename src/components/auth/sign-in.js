@@ -1,6 +1,7 @@
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router";
 import { useContext } from "react";
+import { Link } from "react-router-dom";
 
 import { UserContext } from "../../store/user-context";
 
@@ -49,7 +50,7 @@ function SignIn() {
                     {errors?.email && <span className="error">Email is required</span>}
                 </div>
 
-                <div className="form-group mb-2">
+                <div className="form-group mb-4">
                     <label htmlFor="password">Password</label>
                     <input type="password" className="form-control" {...register('password', { required: true })} />
                     {errors?.password && <span className="error">Password is required</span>}
@@ -57,6 +58,7 @@ function SignIn() {
 
                 <button type="submit" className="auth-btn">Sign In</button>
             </form>
+            <Link to="/sign-up" className="auth-link">or Sign Up</Link>
         </div>
     );
 }

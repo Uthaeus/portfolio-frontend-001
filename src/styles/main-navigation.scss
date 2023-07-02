@@ -19,13 +19,6 @@
             padding-top: 1rem;
             padding-left: 1rem;
             position: relative;
-            text-decoration: none;
-            transition: all 0.3s ease-in-out;
-
-            &:hover {
-                transform: scale(1.02);
-                box-shadow: 0px 0px 6px 0px rgba(155, 116, 25, 0.75);
-            }
 
             .main-user-item-img {
                 width: 60%;
@@ -37,17 +30,36 @@
             .main-user-item-username {
                 font-size: 1.4rem;
                 font-weight: 700;
-                color: $light-blue;
+                color: $green;
                 position: absolute;
                 bottom: -0.6rem;
                 right: 1rem;
+                text-decoration: none;
+                border-bottom: 1px transparent solid;
+                transition: all 0.3s ease-in-out;
+
+                &:hover {
+                    color: $spanish-green;
+                    border-bottom: 1px solid $spanish-green;
+                    transform: scale(1.1);
+                }
             }
         }
 
         .head-welcome {
             font-size: 2rem;
             font-weight: 700;
-            color: $light-blue;
+            padding-bottom: 0.5rem;
+            color: $green;
+            border-bottom: 1px solid transparent;
+            text-decoration: none;
+            transition: all 0.3s ease-in-out;
+
+            &:hover {
+                color: $spanish-green;
+                transform: scale(1.1);
+                border-bottom: 1px solid $spanish-green;
+            }
         }
     }
 

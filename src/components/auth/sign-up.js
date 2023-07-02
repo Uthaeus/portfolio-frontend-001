@@ -1,8 +1,7 @@
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router";
 import { useContext } from "react";
-
-// import defaultAvatar from '../../assets/images/hammer-thumb.jpg';
+import { Link } from "react-router-dom";
 
 import { UserContext } from "../../store/user-context";
 
@@ -78,7 +77,7 @@ function SignUp() {
                     {errors?.password && <span className="error">Password is required</span>}
                 </div>
 
-                <div className="form-group mb-2">
+                <div className="form-group mb-4">
                     <label htmlFor="password_confirmation">Password Confirmation</label>
                     <input type="password" className="form-control" {...register('password_confirmation', { required: true })} />
                     {errors?.password_confirmation && <span className="error">Password Confirmation is required</span>}
@@ -86,6 +85,7 @@ function SignUp() {
 
                 <button type="submit" className="auth-btn">Sign Up</button>
             </form>
+            <Link to="/sign-in" className="auth-link">or Sign In</Link>
         </div>
     );
 }

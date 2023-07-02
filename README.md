@@ -1,7 +1,6 @@
 # portfolio-frontend-001
 
-- add header to blog sidebar
-- add footer to blogs
+- refactor blog header
 - refactor user items for navs
 - userpage
 

@@ -29,7 +29,7 @@ function MainNavigation() {
         <div className="main-navigation">
             <div className="main-navigation-head">
 
-                {user ? <MainUserItem user={user} /> : <p className="head-welcome">Hello</p>}
+                {user ? <MainUserItem user={user} /> : <Link to='/sign-up' className="head-welcome">Hello</Link>}
             </div>
 
             <div className="main-navigation-links">
