@@ -1,0 +1,81 @@
+
+.userpage {
+    width: 100%;
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+
+    .userpage-header {
+        width: 40%;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid #ccc;
+
+        .userpage-title {
+            font-size: 2rem;
+            font-weight: 600;
+            color: $orange;
+        }
+    }
+
+    .userpage-content {
+        width: 60%;
+        margin: 0 auto;
+        border-radius: 5px;
+        border: 1px solid #ccc;
+        background-color: $metallic-silver;
+        color: $rich-black2;
+
+        .content-item {
+            width: 100%;
+            display: flex;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #ccc;
+            padding: 0 0.5rem;
+
+            .content-text {
+                width: 30%;
+                font-size: 1.3em;
+            }
+
+            .content-data {
+                font-size: 1.5em;
+                color: $blog-dark-blue;
+            }
+        }
+    }
+
+    .userpage-actions {
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        padding: 1rem 0;
+
+        .userpage-link {
+            width: 10%;
+            margin: 0 0.5rem;
+            box-shadow: 2px 2px 2px #ccc;
+            border-radius: 3px;
+            font-size: 0.9em;
+            color: $rich-black2;
+            transition: all 0.3s ease-in-out;
+
+            &:hover {
+                box-shadow: 2px 2px 2px #aaa;
+                filter: brightness(1.1);
+                transform: scale(1.03);
+            }
+        }
+
+        .userpage-delete {
+            background-color: $red;
+        }
+
+        .userpage-edit {
+            background-color: $green;
+        }
+
+        .userpage-home {
+            background-color: $blog-blue;
+        }
+    }
+}

@@ -3,6 +3,7 @@
 - refactor blog header
 - userpage
 - add likes to blogs/portfolio items?
+- default avatar selection for users?
 
 
 - addresses for social links
