@@ -37,6 +37,7 @@ function Blogs() {
         let updatedBlogs = blogs.filter((blog) => blog.id !== id);
 
         setBlogs(updatedBlogs);
+        setDisplayedBlogs(updatedBlogs);
     };
 
     return (

@@ -228,7 +228,7 @@
                     .portfolio-detail-description {
                         font-size: 1.2rem;
                         font-weight: 400;
-                        color: #161616;
+                        color: $rich-black2;
                         word-break: break-all;
                     }
                 }
@@ -242,12 +242,12 @@
                         width: 100px;
                         text-decoration: none;
                         text-align: center;
-                        border: none;
+                        border: 1px solid $black;
                         border-radius: 3px;
                         box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.297);
                         font-size: 1.2rem;
                         font-weight: 400;
-                        color: $light-grey;
+                        color: $rich-black2;
                         margin: 0 0.5rem;
                         padding: 2px 0;
                         transition: all 0.3s ease-in-out;
@@ -261,7 +261,7 @@
                     }
     
                     .edit-action {
-                        background-color: $green;
+                        background-color: $active-green;
                     }
     
                     .delete-action {
@@ -269,7 +269,7 @@
                     }
     
                     .back-action {
-                        background-color: $dark-blue1;
+                        background-color: $blue4;
                     }
                 }
             }

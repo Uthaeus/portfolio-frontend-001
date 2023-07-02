@@ -73,6 +73,7 @@
 .blog-sidebar {
     width: 90%;
     margin: 1rem auto;
+    padding: 1rem 0;
     border-radius: 8px;
     background-color: $blog-light-blue;
     box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.2);
@@ -151,6 +152,33 @@
         }
     }
 
+    .blog-sidebar-divider {
+        width: 55%;
+        height: 2px;
+        text-align: center;
+        background-color: $metallic-silver;
+        margin-left: 22%;
+        margin-bottom: 1rem;
+    }
+
+    .blog-sidebar-quote {
+        width: 80%;
+        margin: 0 auto;
+
+        .sidebar-quote {
+            font-size: 1.2em;
+            color: $smoky-black;
+            text-align: center;
+            font-style: italic;
+        }
+
+        .sidebar-author {
+            text-align: right;
+            font-size: 0.9em;
+            color: $lavender-indigo;
+        }
+    }
+
     .blog-sidebar-socials {
         width: 60%;
         margin: 0 auto;
@@ -158,7 +186,6 @@
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         grid-gap: 0.5rem 1rem;
-        border-bottom: 1px solid $blog-dark-blue;
         padding-bottom: 1rem;
 
         .blog-sidebar-socials-link {
@@ -335,12 +362,14 @@
 
 .blog-detail {
     width: 96%;
-    margin: 1rem auto;
+    min-height: calc(100vh - 160px);
+    margin: 2rem auto;
     display: grid;
     grid-template-columns: 3fr 2fr;
 
     .blog-detail-left {
         width: 100%;
+        margin-top: 1rem;
 
         .blog-detail-body {
             width: 100%;

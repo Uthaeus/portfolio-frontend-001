@@ -24,12 +24,14 @@ function BlogDetail() {
     function deleteHandler() {
         fetch(`http://localhost:4000/blogs/${id}`, {
             method: "DELETE",
+            headers: {
+                'Authorization': `Bearer ${localStorage.getItem('token-001')}`
+            }
         })
             .then((res) => {
                 if (res.ok) {
                     console.log("blog deleted");
                     navigate("/blogs");
-                    return res.json();
                 }
             })
             .catch((error) => console.log("delete blog error", error));

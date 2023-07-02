@@ -18,6 +18,7 @@
     .footer-copyright {
         font-weight: 600;
         color: $licorice;
+        margin-bottom: -0.25rem;
     }
 
     .copyright-name {
@@ -32,15 +33,14 @@
         justify-content: flex-end;
 
         .footer-link {
-            font-size: 1.2em;
             font-weight: 600;
             text-decoration: none;
             text-align: center;
-            color: $white;
+            color: $smoky-black;
             box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.3);
-            border-radius: 4px;
+            border-radius: 3px;
             padding: 0 2rem;
-            margin: 0 2rem;
+            margin: 0 1rem;
             margin-bottom: 0.25rem;
             transition: all 0.3s ease-in-out;
 
@@ -52,11 +52,11 @@
         }
 
         .footer-home {
-            background-color: $dark-blue;
+            background-color: $blue4;
         }
 
         .footer-portfolio {
-            background-color: $brown;
+            background-color: $dark-blue3;
         }
     }
 }

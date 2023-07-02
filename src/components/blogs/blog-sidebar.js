@@ -48,6 +48,15 @@ function BlogSidebar({ user, categoryFilterHandler }) {
                 {categories.map((category) => <BlogCategoryItem key={category.id} category={category} user={user} categoryFilterHandler={categoryFilterHandler} categoryDeleteHandler={categoryDeleteHandler} />)}
             </ul>
 
+            <div className="blog-sidebar-divider" />
+
+            <div className="blog-sidebar-quote">
+                <p className="sidebar-quote">“We all make mistakes, and it is better to make them before we begin.”</p>
+                <p className="sidebar-author">— Nikola Tesla</p>
+            </div>
+
+            <div className="blog-sidebar-divider" />
+
             <h2 className="blog-sidebar-title">socials</h2>
 
             <div className="blog-sidebar-socials">

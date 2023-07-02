@@ -7,3 +7,50 @@
     min-height: 100vh;
     
 }
+
+.blog-footer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-top: 2rem;
+    border-top: 1px solid $grey;
+    padding: 0.5rem;
+
+    .blog-footer-btn {
+        width: 15%;
+        font-size: 0.9em;
+        border-radius: 3px;
+        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+        margin: 0 1rem;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+            filter: brightness(1.2);
+            box-shadow: 3px 3px 4px rgba(0, 0, 0, 0.5);
+            transform: scale(1.04);
+        }
+    }
+
+    .blogs-btn {
+        background-color: $blog-dark-green;
+        color: $blog-light-blue;
+        border: 1px solid $blog-light-blue;
+    }
+
+    .home-btn {
+        background-color: $blog-dark-blue;
+        color: $blog-light-blue;
+        border: 1px solid $blog-light-blue;
+    }
+
+    .blog-footer-copyright {
+        margin-left: 6%;
+        color: $rich-black;
+    }
+
+    .blog-copyright-name {
+        font-size: 1.1em;
+        color: $blog-light-blue;
+        margin: 0 0.35rem;
+    }
+}
