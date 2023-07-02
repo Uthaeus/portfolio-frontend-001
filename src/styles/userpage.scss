@@ -7,30 +7,56 @@
 
     .userpage-header {
         width: 40%;
-        padding-bottom: 2rem;
-        border-bottom: 1px solid #ccc;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid $brown;
 
         .userpage-title {
             font-size: 2rem;
             font-weight: 600;
             color: $orange;
+            margin-left: 2rem;
         }
+    }
+
+    .userpage-body {
+        width: 100%;
+        display: flex;
     }
 
     .userpage-content {
         width: 60%;
-        margin: 0 auto;
+        margin: 2rem 0;
         border-radius: 5px;
-        border: 1px solid #ccc;
         background-color: $metallic-silver;
         color: $rich-black2;
+        box-shadow: 0px 0px 8px #ffffff51;
 
         .content-item {
             width: 100%;
             display: flex;
+            align-items: center;
             padding-bottom: 1rem;
-            border-bottom: 1px solid #ccc;
-            padding: 0 0.5rem;
+            border-bottom: 1px solid $rich-black2;
+            padding: 0.25rem 0.5rem;
+
+            .content-comments-link {
+                font-size: 1em;
+                margin-left: 4rem;
+                color: $green;
+                text-decoration: underline;
+                transition: all 0.3s ease-in-out;
+
+                &:hover {
+                    cursor: pointer;
+                    color: $yellow-green;
+                }
+            }
+
+            .content-avatar {
+                border-radius: 3px;
+                margin: 0.5rem 0;
+                margin-left: 4rem;
+            }
 
             .content-text {
                 width: 30%;
@@ -51,16 +77,16 @@
         padding: 1rem 0;
 
         .userpage-link {
-            width: 10%;
+            width: 15%;
             margin: 0 0.5rem;
-            box-shadow: 2px 2px 2px #ccc;
+            box-shadow: 1px 1px 2px #ffffff2c;
             border-radius: 3px;
             font-size: 0.9em;
             color: $rich-black2;
             transition: all 0.3s ease-in-out;
 
             &:hover {
-                box-shadow: 2px 2px 2px #aaa;
+                box-shadow: 3px 3px 4px #ffffff2c;
                 filter: brightness(1.1);
                 transform: scale(1.03);
             }
@@ -75,7 +101,7 @@
         }
 
         .userpage-home {
-            background-color: $blog-blue;
+            background-color: $blue;
         }
     }
 }
