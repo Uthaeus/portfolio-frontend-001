@@ -2,9 +2,9 @@
 function UserpageCommentItem({ comment }) {
 
     return (
-        <div className="userpage-sidebar-comment">
-            <p className="userpage-sidebar-comment-content">{comment.content}</p>
-            <p className="userpage-sidebar-comment-created">{comment.created_at}</p>
+        <div className="userpage-comment-item">
+            <p className="userpage-comment-item-content">{comment.content}</p>
+            <p className="userpage-comment-item-created">{comment.created_at}</p>
         </div>
     );
 }

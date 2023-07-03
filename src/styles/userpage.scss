@@ -21,6 +21,62 @@
     .userpage-body {
         width: 100%;
         display: flex;
+
+        .userpage-sidebar {
+            width: 40%;
+            padding: 1rem;
+            display: flex;
+            flex-direction: column;
+
+            .userpage-sidebar-title {
+                font-size: 1.5em;
+                font-weight: 600;
+                color: $orange;
+                margin-left: 2rem;
+            }
+
+            .userpage-sidebar-comments {
+                width: 100%;
+                display: flex;
+                flex-direction: column;
+
+                .userpage-comment-item {
+                    width: 100%;
+                    min-height: 125px;
+                    margin: 0.5rem 0;
+                    padding: 0.25rem 0.5rem;
+                    border: 1px solid $licorice;
+                    border-radius: 5px;
+                    background-color: $white;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+
+                    .userpage-comment-item-content {
+                        color: $licorice;
+                    }
+
+                    .userpage-comment-item-created {
+                        color: $grey;
+                        font-size: 0.7em;
+                    }
+                }
+            }
+
+            .userpage-sidebar-blog-comments {
+                width: 95%;
+                margin: 0.5rem auto;
+                padding-bottom: 1rem;
+                border-bottom: 1px solid $brown;
+            }
+
+            .userpage-sidebar-portfolio-comments {
+                width: 95%;
+                margin: 0.5rem auto;
+                padding-bottom: 1rem;
+                border-bottom: 1px solid $brown;
+            }
+        }
     }
 
     .userpage-content {
