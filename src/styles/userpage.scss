@@ -21,6 +21,7 @@
     .userpage-body {
         width: 100%;
         display: flex;
+        align-items: flex-start;
 
         .userpage-sidebar {
             width: 40%;
@@ -29,7 +30,7 @@
             flex-direction: column;
 
             .userpage-sidebar-title {
-                font-size: 1.5em;
+                font-size: 1.4em;
                 font-weight: 600;
                 color: $orange;
                 margin-left: 2rem;
@@ -42,7 +43,7 @@
 
                 .userpage-comment-item {
                     width: 100%;
-                    min-height: 125px;
+                    min-height: 100px;
                     margin: 0.5rem 0;
                     padding: 0.25rem 0.5rem;
                     border: 1px solid $licorice;
@@ -59,6 +60,13 @@
                     .userpage-comment-item-created {
                         color: $grey;
                         font-size: 0.7em;
+                        text-align: right;
+                        margin-bottom: -0.25rem;
+                    }
+
+                    .created-at {
+                        color: $brown;
+                        font-size: 0.9;
                     }
                 }
             }

@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 
 import image from "../assets/images/hammer-thumb.jpg";
 
@@ -9,6 +9,8 @@ import UserpageCommentItem from "../components/userpage/userpage-comment-item";
 
 function Userpage() {
     const { user, logoutUser } = useContext(UserContext);
+    const [showBlogComments, setShowBlogComments] = useState(false);
+    const [showPortfolioComments, setShowPortfolioComments] = useState(false);
     const navigate = useNavigate();
     let userAvatar = user.avatar?.url ? `http://localhost:4000${user.avatar.url}` : image;
 
@@ -28,6 +30,14 @@ function Userpage() {
             throw response;
         })
         .catch(error => console.log('Error deleting user: ', error));
+    }
+
+    function toggleBlogComments() {
+        setShowBlogComments(!showBlogComments);
+    }
+
+    function togglePortfolioComments() {
+        setShowPortfolioComments(!showPortfolioComments);
     }
     
     return (
@@ -50,7 +60,7 @@ function Userpage() {
                         <p className="content-data">{user.blog_comments?.length}</p>
 
                         {user.blog_comments?.length > 0 && (
-                            <p className="content-comments-link">see comments</p>
+                            <p onClick={toggleBlogComments} className="content-comments-link">see comments</p>
                         )}
                     </div>
 
@@ -59,7 +69,7 @@ function Userpage() {
                         <p className="content-data">{user.portfolio_comments?.length}</p>
 
                         {user.portfolio_comments?.length > 0 && (
-                            <p className="content-comments-link">see comments</p>
+                            <p onClick={togglePortfolioComments} className="content-comments-link">see comments</p>
                         )}
                     </div>
 
