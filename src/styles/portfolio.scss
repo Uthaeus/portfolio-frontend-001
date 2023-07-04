@@ -45,7 +45,7 @@
             font-size: 1.2rem;
             font-weight: 400;
             color: $dark-blue;
-            transition: all 0.3s ease-in-out;
+            transition: filter 0.3s ease-in-out, transform 0.4s ease-in-out;
 
             &:hover {
                 filter: brightness(1.2);
@@ -107,7 +107,7 @@
                 font-size: 1.2rem;
                 font-weight: 400;
                 color: $metallic-silver;
-                transition: all 0.3s ease-in-out;
+                transition: filter 0.3s ease-in-out, transform 0.4s ease-in-out;
                 position: absolute;
                 bottom: 0.5rem;
                 right: 0.75rem;
@@ -132,7 +132,7 @@
                     font-size: 0.8em;
                     font-weight: 400;
                     color: $licorice;
-                    transition: all 0.3s ease-in-out;
+                    transition: color 0.3s ease-in-out, transform 0.4s ease-in-out;
 
                     &:hover {
                         cursor: pointer;
@@ -157,7 +157,7 @@
                         box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.297);
                         background-color: $metallic-silver;
                         color: $black;
-                        transition: all 0.3s ease-in-out;
+                        transition: filter 0.3s ease-in-out, transform 0.4s ease-in-out, box-shadow 0.3s ease-in-out;
 
                         &:hover {
                             filter: brightness(1.2);
@@ -202,7 +202,7 @@
                             top: 0;
                             right: 0;
                             color: $red;
-                            transition: all 0.3s ease-in-out;
+                            transition: color 0.3s ease-in-out, transform 0.4s ease-in-out;
 
                             &:hover {
                                 cursor: pointer;
@@ -250,7 +250,7 @@
                         color: $rich-black2;
                         margin: 0 0.5rem;
                         padding: 2px 0;
-                        transition: all 0.3s ease-in-out;
+                        transition: filter 0.3s ease-in-out, transform 0.4s ease-in-out, box-shadow 0.3s ease-in-out;
     
                         &:hover {
                             cursor: pointer;
@@ -319,7 +319,7 @@
         background-color: $brown;
         color: $white;
         box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
-        transition: all 0.3s ease-in-out;
+        transition: filter 0.3s ease-in-out, transform 0.4s ease-in-out, box-shadow 0.3s ease-in-out;
 
         &:hover {
             filter: brightness(1.2);
@@ -370,7 +370,7 @@
             top: 0;
             right: 0.5rem;
             color: $red;
-            transition: all 0.3s ease-in-out;
+            transition: transform 0.4s ease-in-out;
 
             &:hover {
                 cursor: pointer;
@@ -449,7 +449,7 @@
                 border-radius: 3px;
                 border: 1px solid $dark-grey;
                 box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
-                transition: all 0.3s ease-in-out;
+                transition: filter 0.3s ease-in-out, transform 0.4s ease-in-out, box-shadow 0.3s ease-in-out;
 
                 &:hover {
                     cursor: pointer;
@@ -505,7 +505,7 @@
         font-weight: 700;
         color: $light-blue;
         margin: 0.5rem 0;
-        transition: all 0.3s ease-in-out;
+        transition: color 0.3s ease-in-out;
 
         &:hover {
             cursor: pointer;
@@ -536,7 +536,7 @@
         background-color: $brown;
         color: $white;
         box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.358);
-        transition: all 0.3s ease-in-out;
+        transition: filter 0.3s ease-in-out, transform 0.4s ease-in-out, box-shadow 0.3s ease-in-out;
 
         &:hover {
             cursor: pointer;

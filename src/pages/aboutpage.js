@@ -1,6 +1,5 @@
 import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";  
-import { useNavigate } from "react-router-dom"; 
 
 import mainImage from "../assets/images/about-img.jpg";
 
@@ -12,7 +11,6 @@ function Aboutpage() {
     const { user } = useContext(UserContext);
     const [skills, setSkills] = useState([]);
     const [showSkillForm, setShowSkillForm] = useState(false);
-    const navigate = useNavigate();
 
     useEffect(() => {
         fetch('http://localhost:4000/skills')
@@ -31,11 +29,12 @@ function Aboutpage() {
 
     return (
         <div className="about-page-container">
+
             <div className="about-page-body">
                 <div className="about-page-image-wrapper">
                     <img className="about-page-image" src={mainImage} alt="about page" width='100%' />
 
-                    <button onClick={() => navigate('/contact')} className="contact-btn">Contact Me</button>
+                    <Link to='/contact' className="contact-link">Contact Me</Link>
                 </div>
 
                 <div className="about-page-content">
@@ -49,8 +48,6 @@ function Aboutpage() {
                             Nulla facilisi. Nulla facilisi. Nulla facilisi. Nulla
                         </p>
                     </div>
-
-                    
                 </div>
             </div>
 
@@ -61,7 +58,7 @@ function Aboutpage() {
 
                 {showSkillForm && <SkillForm addSkillHandler={addSkillHandler} />}
 
-                <p className="about-page-skills-title">an approximation of where i'm currently putting my time</p>
+                <p className="about-page-skills-title">what i'm up to these days</p>
 
                 <div className="about-page-skills">
                     {skills.map(skill => <SkillItem key={skill.id} skill={skill} user={user} removeSkillHandler={removeSkillHandler} />)}

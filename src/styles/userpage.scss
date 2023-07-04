@@ -108,7 +108,7 @@
                 margin-left: 4rem;
                 color: $green;
                 text-decoration: underline;
-                transition: all 0.3s ease-in-out;
+                transition: color 0.3s ease-in-out;
 
                 &:hover {
                     cursor: pointer;
@@ -147,7 +147,7 @@
             border-radius: 3px;
             font-size: 0.9em;
             color: $rich-black2;
-            transition: all 0.3s ease-in-out;
+            transition: filter 0.3s ease-in-out, box-shadow 0.3s ease-in-out, transform 0.4s ease-in-out;
 
             &:hover {
                 box-shadow: 3px 3px 4px #ffffff2c;

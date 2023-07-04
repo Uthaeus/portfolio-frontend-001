@@ -81,7 +81,7 @@
     .new-category-link {
         font-size: 0.7em;
         color: $red;
-        transition: all 0.3s ease-in-out;
+        transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
 
         &:hover {
             cursor: pointer;
@@ -102,7 +102,7 @@
         color: $red;
         text-decoration: underline;
         margin-left: 1.5rem;
-        transition: all 0.3s ease-in-out;
+        transition: filter 0.3s ease-in-out, transform 0.4s ease-in-out;
 
         &:hover {
             filter: brightness(1.2);
@@ -124,7 +124,7 @@
                 font-size: 1.8em;
                 font-weight: 600;
                 color: $blog-dark-blue;
-                transition: all 0.3s ease-in-out;
+                transition: color 0.3s ease-in-out, transform 0.4s ease-in-out;
 
                 &:hover {
                     cursor: pointer;
@@ -142,7 +142,7 @@
             .category-delete {
                 font-size: 1.4em;
                 color: $red;
-                transition: all 0.3s ease-in-out;
+                transition: transform 0.4s ease-in-out;
 
                 &:hover {
                     cursor: pointer;
@@ -192,7 +192,7 @@
             font-size: 1.9em;
             text-align: center;
             color: $tan;
-            transition: all 0.3s ease-in-out;
+            transition: color 0.3s ease-in-out, transform 0.4s ease-in-out;
 
             &:hover {
                 transform: scale(1.2);
@@ -239,7 +239,7 @@
                 color: $blog-dark-green;
                 padding-left: 0.25rem;
                 font-size: 1.2em;
-                transition: all 0.3s ease-in-out;
+                transition: color 0.3s ease-in-out, transform 0.4s ease-in-out;
 
                 &:hover {
                     cursor: pointer;
@@ -250,7 +250,7 @@
 
             .back-widget {
                 color: $blog-blue;
-                transition: all 0.3s ease-in-out;
+                transition: color 0.3s ease-in-out, transform 0.4s ease-in-out;
 
                 &:hover {
                     transform: scale(1.2);
@@ -262,7 +262,7 @@
                 color: $blog-blue;
                 font-size: 1.3em;
                 margin: 0 0.5rem;
-                transition: all 0.3s ease-in-out;
+                transition: color 0.3s ease-in-out, transform 0.4s ease-in-out;
 
                 &:hover {
                     transform: scale(1.2);
@@ -283,7 +283,7 @@
             .edit-widget {
                 color: $blog-green;
                 font-size: 1.2em;
-                transition: all 0.3s ease-in-out;
+                transition: color 0.3s ease-in-out, transform 0.4s ease-in-out;
 
                 &:hover {
                     transform: scale(1.2);
@@ -294,7 +294,7 @@
             .delete-widget {
                 color: $red;
                 font-size: 1.2em;
-                transition: all 0.3s ease-in-out;
+                transition: transform 0.3s ease-in-out;
 
                 &:hover {
                     transform: scale(1.2);
@@ -322,7 +322,7 @@
     border-radius: 4px;
     background-color: $blog-dark-green;
     box-shadow: 0px 0px 6px 0px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
 
     &:hover {
         transform: scale(1.02);
@@ -430,7 +430,7 @@
                     color: $blog-blue;
                     font-size: 1.2em;
                     padding-right: 0.5rem;
-                    transition: all 0.3s ease-in-out;
+                    transition: color 0.3s ease-in-out, transform 0.4s ease-in-out;
 
                     &:hover {
                         transform: scale(1.2);
@@ -442,7 +442,7 @@
                     color: $blog-blue;
                     padding-left: 0.5rem;
                     font-size: 1.2em;
-                    transition: all 0.3s ease-in-out;
+                    transition: color 0.3s ease-in-out, transform 0.4s ease-in-out;
 
                     &:hover {
                         cursor: pointer;
@@ -461,7 +461,7 @@
                     color: $blog-green;
                     font-size: 1.2em;
                     margin: 0 0.5rem;
-                    transition: all 0.3s ease-in-out;
+                    transition: color 0.3s ease-in-out, transform 0.4s ease-in-out;
 
                     &:hover {
                         transform: scale(1.2);
@@ -473,7 +473,7 @@
                     color: $red;
                     font-size: 1.2em;
                     margin: 0 0.5rem;
-                    transition: all 0.3s ease-in-out;
+                    transition: transform 0.3s ease-in-out;
 
                     &:hover {
                         transform: scale(1.2);
@@ -526,7 +526,7 @@
         background-color: $blog-dark-blue;
         color: $white;
         border-radius: 3px;
-        transition: all 0.3s ease-in-out;
+        transition: background-color 0.3s ease-in-out, transform 0.4s ease-in-out;
 
         &:hover {
             transform: scale(1.05);
@@ -589,7 +589,7 @@
             font-weight: 700;
             border: 2px solid $red;
             padding: 0 0.25rem;
-            transition: all 0.3s ease-in-out;
+            transition: transform 0.3s ease-in-out;
 
             &:hover {
                 cursor: pointer;

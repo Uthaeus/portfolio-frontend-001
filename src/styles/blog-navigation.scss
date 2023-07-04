@@ -17,7 +17,7 @@
             font-weight: 600;
             color: $metallic-silver;
             text-decoration: none;
-            transition: all 0.3s ease-in-out;
+            transition: color 0.3s ease-in-out, transform 0.4s ease-in-out;
 
             &:hover {
                 color: $blog-green;
@@ -43,7 +43,7 @@
                 font-weight: 600;
                 color: $blog-green;
                 text-decoration: none;
-                transition: all 0.3s ease-in-out;
+                transition: color 0.3s ease-in-out, transform 0.4s ease-in-out;
 
                 &:hover {
                     color: $blog-dark-green;
@@ -75,7 +75,7 @@
         text-decoration: none;
         margin: 0 15px;
         margin-bottom: 0.25rem;
-        transition: all 0.3s ease-in-out;
+        transition: color 0.3s ease-in-out, transform 0.4s ease-in-out;
 
         &:hover {
             color: $blog-green;

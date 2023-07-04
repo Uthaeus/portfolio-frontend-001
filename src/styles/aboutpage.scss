@@ -7,12 +7,9 @@
 
     .about-page-body {
         width: 70%;
-        margin-top: 4rem;
-        background-color: $metallic-silver;
+        margin-top: 3rem;
         color: $black;
-        border-radius: 10px;
         display: flex;
-        box-shadow: 0px 0px 5px $rich-black;
 
         .about-page-image-wrapper {
             width: 40%;
@@ -20,7 +17,7 @@
 
             .about-page-image {
                 border-radius: 4px;
-
+                margin-bottom: 2rem;
             }
         }
 
@@ -37,11 +34,11 @@
             }
 
             .about-page-blurb-wrapper {
-                width: 80%;
+                width: 94%;
                 margin: 0 auto;
-                padding: 1rem;
-                border-radius: 8px;
-                background-color: $light-grey;
+                padding: 0.5rem 1rem;
+                border-radius: 6px;
+                background-color: $white;
                 box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
 
                 .about-page-blurb {
@@ -57,19 +54,13 @@
         }
     }
 
-    .contact-btn {
+    .contact-link {
         font-size: 0.9em;
-        margin: 1rem 0;
-        padding: 0 2rem;
-        background-color: $green;
-        border-radius: 3px;
-        box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.2);
-        transition: all 0.3s ease-in-out;
+        color: $metallic-gold;
+        transition: color 0.3s ease-in-out;
 
         &:hover {
-            transform: scale(1.04);
-            box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2);
-            filter: brightness(1.2);
+            color: $metallic-bronze;
         }
     }
     
@@ -81,7 +72,7 @@
         .add-skill-btn {
             font-size: 0.8em;
             color: $grey;
-            transition: all 0.3s ease-in-out;
+            transition: color 0.3s ease-in-out;
 
             &:hover {
                 color: $blue;
@@ -148,7 +139,7 @@
         top: 0.25rem;
         right: 0.25rem;
         font-size: 1.2em;
-        transition: all 0.3s ease-in-out;
+        transition: color 0.3s ease-in-out;
 
         &:hover {
             color: $calc-red;

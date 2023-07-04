@@ -12,7 +12,7 @@ function Userpage() {
     const [showBlogComments, setShowBlogComments] = useState(false);
     const [showPortfolioComments, setShowPortfolioComments] = useState(false);
     const navigate = useNavigate();
-    let userAvatar = user.avatar?.url ? `http://localhost:4000${user.avatar.url}` : image;
+    
 
     function deleteUserHandler() {
         fetch(`http://localhost:4000/users/${user.id}`, {
@@ -39,6 +39,10 @@ function Userpage() {
     function togglePortfolioComments() {
         setShowPortfolioComments(!showPortfolioComments);
     }
+
+    if (!user) return <h3>Loading...</h3>;
+
+    let userAvatar = user.avatar?.url ? `http://localhost:4000${user.avatar.url}` : image;
     
     return (
         <div className="userpage">
