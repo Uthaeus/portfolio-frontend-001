@@ -9,6 +9,7 @@ import BlogFeaturedItem from "../components/blogs/blog-featured-item";
 function Blogs() {
     const [blogs, setBlogs] = useState([]);
     const [displayedBlogs, setDisplayedBlogs] = useState([]);
+    const [currentCategory, setCurrentCategory] = useState("all");
     const [featuredBlog, setFeaturedBlog] = useState(null); 
     const { user } = useContext(UserContext);
 
@@ -27,9 +28,11 @@ function Blogs() {
     function categoryFilterHandler(id) {
         if (id === "all") {
             setDisplayedBlogs(blogs);
+            setCurrentCategory("all");
         } else {
             let filteredBlogs = blogs.filter((blog) => blog.category_id === id);
             setDisplayedBlogs(filteredBlogs);
+            setCurrentCategory(id);
         }
     }
 
@@ -44,14 +47,11 @@ function Blogs() {
         <div className="blogs-container">
             <div className="blogs-header">
                 <div className="blogs-header-main">
-                    <h2 className="blogs-header-title">My Blogs</h2>
-                    <p className="blogs-header-subtitle">Learn from my mistakes</p>
+                    <p className="blogs-header-title">My Blogs</p>
+                    <p className="blogs-header-subtitle">Trying to learn from my mistakes</p>
                 </div>
-
-                <div className="blogs-header-featured">
-                    <p className="featured-title">featured blog:</p>
-                    {featuredBlog && <BlogFeaturedItem blog={featuredBlog} />}
-                </div>
+                
+                {featuredBlog && <BlogFeaturedItem blog={featuredBlog} />}
             </div>
 
             {user?.role === 'site_admin' && <Link to="/blogs/new" className="new-blog-link">New Blog</Link>}
@@ -62,7 +62,7 @@ function Blogs() {
                     {displayedBlogs.map((blog) => <BlogItem key={blog.id} blog={blog} user={user} removeBlogHandler={removeBlogHandler} categoryFilterHandler={categoryFilterHandler} />)}
                 </div>
 
-                <BlogSidebar user={user} categoryFilterHandler={categoryFilterHandler} />
+                <BlogSidebar user={user} categoryFilterHandler={categoryFilterHandler} currentCategory={currentCategory} />
             </div>
         </div>
     );

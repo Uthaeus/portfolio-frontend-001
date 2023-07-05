@@ -63,11 +63,11 @@ function BlogDetail() {
                             <Link to="/blogs" className="blog-detail-back">{'<< blogs'}</Link> /
                             <p className="detail-widget-item">{blog.id}</p> /
                             <p className="detail-widget-item">{blog.title}</p> /
-                            <p className="blog-detail-category">{blog.category?.name}</p>
+                            <p className="detail-widget-item">created: <span className="blog-detail-date">{blog.created_at.split('T')[0]}</span></p>
                         </div>
 
                         <div className="detail-widgets-right">
-                            <p className="detail-widget-item">created: <span className="blog-detail-date">{blog.created_at.split('T')[0]}</span></p>
+                            
 
                             {user?.role === "site_admin" && (
                                 <>
@@ -79,6 +79,7 @@ function BlogDetail() {
                                     </Link>
                                 </>
                             )}
+                            <p className="blog-detail-category">{blog.category?.name}</p>
                         </div>
                     </div>
 

@@ -32,12 +32,10 @@ function BlogItem({ blog, user, removeBlogHandler, categoryFilterHandler }) {
                     </Link> /
                     <Link to='/blogs' className="widget-item back-widget">blogs</Link> /
                     <span className="widget-item">{blog.id}</span> /
-                    <Link onClick={() => categoryFilterHandler(blog.category.id)} className="widget-item category-name">{blog.category?.name}</Link> 
-                     
+                    <span className="widget-item">created <span className="date-widget">{blog.created_at.split('T')[0]}</span></span>
                 </div>
 
                 <div className="widgets-right">
-                    <p className="widget-item">created <span className="date-widget">{blog.created_at.split('T')[0]}</span></p>
                     {user?.role === 'site_admin' && (
                         <>
                             <Link to={`/blogs/${blog.id}/edit`} className="widget-item edit-widget">
@@ -48,6 +46,7 @@ function BlogItem({ blog, user, removeBlogHandler, categoryFilterHandler }) {
                             </Link>
                         </>
                     )}
+                    <Link onClick={() => categoryFilterHandler(blog.category.id)} className="widget-item category-name">{blog.category?.name}</Link>
                 </div>
 
             </div>

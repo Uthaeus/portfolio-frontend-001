@@ -7,6 +7,7 @@ function BlogFeaturedItem({ blog }) {
 
   return (
     <Link to={`/blogs/${blog.id}`} className="blog-featured-item">
+        <p className="featured-title">featured blog:</p>
         <h3 className="featured-item-title">{blog.title}</h3>
         <p className="featured-item-body">{truncate(blog.body)}</p>
     </Link>

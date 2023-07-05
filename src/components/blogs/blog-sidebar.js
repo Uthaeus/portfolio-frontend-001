@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import BlogCategoryForm from "./blog-category-form";
 import BlogCategoryItem from "./blog-category-item";
 
-function BlogSidebar({ user, categoryFilterHandler }) {
+function BlogSidebar({ user, categoryFilterHandler, currentCategory }) {
     const [categories, setCategories] = useState([]);
     const [showCategoryForm, setShowCategoryForm] = useState(false);
     
@@ -45,7 +45,7 @@ function BlogSidebar({ user, categoryFilterHandler }) {
 
             <ul className="blog-sidebar-categories">
 
-                {categories.map((category) => <BlogCategoryItem key={category.id} category={category} user={user} categoryFilterHandler={categoryFilterHandler} categoryDeleteHandler={categoryDeleteHandler} />)}
+                {categories.map((category) => <BlogCategoryItem key={category.id} category={category} user={user} categoryFilterHandler={categoryFilterHandler} categoryDeleteHandler={categoryDeleteHandler} currentCategory={currentCategory} />)}
             </ul>
 
             <div className="blog-sidebar-divider" />

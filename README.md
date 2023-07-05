@@ -1,9 +1,11 @@
 # portfolio-frontend-001
 
-- refactor blog header
+
 - userpage
 - add likes to blogs/portfolio items?
 - default avatar selection for users?
+- default component for portfolio detail page?
+- fill out projects dropdown in home page - add title?
 
 
 - addresses for social links
